@@ -1,0 +1,15 @@
+$asset__path: "../../../assets";
+
+.home {
+  max-width: 1700px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2rem !important;
+}
+.hero {
+  background-image: url("#{$asset__path}/Backgrounds/Bg_Header.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  margin: 2rem 0;
+}

@@ -1,1 +1,61 @@
-
+<nav class="navbar">
+  <div class="header">
+    <!-- Logo -->
+    <img
+      src="../../../assets/logo_full_color.svg"
+      alt="Wolox Logo"
+      class="header__logo"
+    />
+    <!-- Menu -->
+    <div class="header__menu">
+      <ul class="header__menu__list">
+        <li class="header__menu__item">
+          <a
+            class="header__menu__item__link"
+            [routerLink]="['/home']"
+            routerLinkActive="router-link-active"
+            [fragment]="'inicio'"
+            >Inicio</a
+          >
+        </li>
+        <li class="header__menu__item">
+          <a
+            class="header__menu__item__link"
+            [routerLink]="['/home']"
+            routerLinkActive="router-link-active"
+            [fragment]="'technologies'"
+            >Tecnologias</a
+          >
+        </li>
+        <li class="header__menu__item">
+          <a
+            class="header__menu__item__link"
+            [routerLink]="['/home']"
+            routerLinkActive="router-link-active"
+            [fragment]="'benefits'"
+            >Beneficios</a
+          >
+        </li>
+        <li class="header__menu__item">
+          <a
+            class="header__menu__item__link"
+            [routerLink]="['/home']"
+            routerLinkActive="router-link-active"
+            [fragment]="'requirements'"
+            >Requerimientos</a
+          >
+        </li>
+        <li class="header__menu__item">
+          <div class="header__menu__item__button">
+            <a
+              class="header__menu__item__button__link"
+              [routerLink]="['login']"
+              routerLinkActive="router-link-active"
+              >Login</a
+            >
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
