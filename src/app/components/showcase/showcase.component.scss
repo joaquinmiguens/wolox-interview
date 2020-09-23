@@ -1,23 +1,19 @@
+@import "../../../scss/mixins.scss";
+@import "../../../scss/variables.scss";
+
 .showcase {
-  padding: 15vh 0;
+  @include section-separation;
   &__container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 3rem;
-    align-items: center;
-    justify-content: center;
+    @include two-column-grid(2, 3rem);
     &__content {
       font-size: 28px;
       margin-bottom: 20vh;
       &__title {
-        font-family: "Montserrat", sans-serif;
-        font-weight: 500;
-        letter-spacing: 0.02em;
-        line-height: 1.4;
+        @include montserrat-style;
         &__bold {
           font-weight: 700;
           &__green {
-            color: #9fc739;
+            color: $green;
           }
         }
       }
@@ -28,4 +24,7 @@
       margin-left: 50px;
     }
   }
+}
+.rotate {
+  @include rotate-vector;
 }
