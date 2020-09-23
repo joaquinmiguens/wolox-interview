@@ -1,5 +1,8 @@
 $asset__path: "../../../assets";
 
+@import "../../../scss/mixins.scss";
+@import "../../../scss/variables.scss";
+
 .home {
   max-width: 1700px;
   margin: auto;
@@ -12,4 +15,29 @@ $asset__path: "../../../assets";
   background-repeat: no-repeat;
   background-size: 100% auto;
   margin: 2rem 0;
+}
+
+.technologies {
+  @include section-separation;
+  &__container {
+    @include two-column-grid(2, 3rem);
+    &__content {
+      font-size: 24px;
+      margin-right: 100px;
+      &__title {
+        @include montserrat-style;
+        &__bold {
+          font-weight: 700;
+          &__green {
+            color: $green;
+          }
+        }
+      }
+    }
+    &__image {
+      max-width: 100%;
+      object-fit: contain;
+      justify-self: center;
+    }
+  }
 }
