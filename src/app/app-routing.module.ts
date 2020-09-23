@@ -1,10 +1,25 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: '', component: HomeComponent },
+  {
+    path: `home`,
+    loadChildren: () =>
+      import('./pages/home/home.module').then((m) => m.HomeModule),
+  },
+  {
+    path: `login`,
+    loadChildren: () =>
+      import('./pages/login/login.module').then((m) => m.LoginModule),
+  },
+  {
+    path: `tech-list`,
+    loadChildren: () =>
+      import('./pages/tech-list/tech-list.module').then(
+        (m) => m.TechListModule
+      ),
+  },
+  { path: ``, redirectTo: `home`, pathMatch: `full` },
 ];
 
 @NgModule({
