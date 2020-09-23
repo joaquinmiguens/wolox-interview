@@ -3,23 +3,23 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: `home`,
-    loadChildren: () =>
-      import('./pages/home/home.module').then((m) => m.HomeModule),
-  },
-  {
-    path: `login`,
+    path: 'login',
     loadChildren: () =>
       import('./pages/login/login.module').then((m) => m.LoginModule),
   },
   {
-    path: `tech-list`,
+    path: 'tech-list',
     loadChildren: () =>
       import('./pages/tech-list/tech-list.module').then(
         (m) => m.TechListModule
       ),
   },
-  { path: ``, redirectTo: `home`, pathMatch: `full` },
+  {
+    path: 'home',
+    loadChildren: () =>
+      import('./pages/home/home.module').then((m) => m.HomeModule),
+  },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 
 @NgModule({

@@ -11,10 +11,10 @@ import { TechListModule } from './pages/tech-list/tech-list.module';
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HomeModule,
     LoginModule,
     TechListModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
