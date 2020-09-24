@@ -9,7 +9,6 @@
   padding-bottom: 30px !important;
   transition: all 0.5s;
   z-index: 99;
-  background: white;
 }
 
 .header {
@@ -29,7 +28,7 @@
       align-items: center;
       justify-content: center;
     }
-    &__item {
+    .item {
       list-style: none;
       padding-left: 50px;
       font-size: 18px;

@@ -9,49 +9,26 @@
     <!-- Menu -->
     <div class="header__menu">
       <ul class="header__menu__list">
-        <li class="header__menu__item">
+        <li
+          class="item"
+          *ngFor="let tab of tabs; trackBy: trackById"
+          id="{{ tab.id }}"
+        >
           <a
-            class="header__menu__item__link"
-            [routerLink]="['/home']"
+            class="item__link"
+            routerLink="{{ tab.routerLink }}"
             routerLinkActive="router-link-active"
-            [fragment]="'hero'"
-            >Inicio</a
+            fragment="{{ tab.fragment }}"
+            *ngIf="!tab.button"
+            >{{ tab.text }}</a
           >
-        </li>
-        <li class="header__menu__item">
-          <a
-            class="header__menu__item__link"
-            [routerLink]="['/home']"
-            routerLinkActive="router-link-active"
-            [fragment]="'technologies'"
-            >Tecnologias</a
-          >
-        </li>
-        <li class="header__menu__item">
-          <a
-            class="header__menu__item__link"
-            [routerLink]="['/home']"
-            routerLinkActive="router-link-active"
-            [fragment]="'benefits'"
-            >Beneficios</a
-          >
-        </li>
-        <li class="header__menu__item">
-          <a
-            class="header__menu__item__link"
-            [routerLink]="['/home']"
-            routerLinkActive="router-link-active"
-            [fragment]="'requirements'"
-            >Requerimientos</a
-          >
-        </li>
-        <li class="header__menu__item">
-          <div class="header__menu__item__button">
+          <div class="item__button" *ngIf="tab.button">
             <a
-              class="header__menu__item__button__link"
-              [routerLink]="['/login']"
+              class="item__button__link"
+              routerLink="{{ tab.routerLink }}"
               routerLinkActive="router-link-active"
-              >Login</a
+              fragment="{{ tab.fragment }}"
+              >{{ tab.text }}</a
             >
           </div>
         </li>

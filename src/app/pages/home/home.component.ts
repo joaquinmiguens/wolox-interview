@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { Benefit } from '../../models/benefit.model';
+import { Requiriment } from '../../models/requiriment.model';
 
 @Component({
   selector: 'app-home',
@@ -17,8 +18,33 @@ export class HomeComponent implements OnInit {
       id: '',
     },
   ];
+  public requiriments: Array<Requiriment> = [
+    {
+      image: '',
+      text: '',
+      id: '',
+    },
+  ];
   constructor() {
     this.assets = '../../../assets';
+    this.requiriments = [
+      {
+        image: `${this.assets}/Ic_Bullet_1.svg`,
+        text:
+          'Estudiantes avanzados o recibidos de carrearas del rubro informatico, sistemas o electronicos',
+        id: '007',
+      },
+      {
+        image: `${this.assets}/Ic_Bullet_2.svg`,
+        text: 'Ingles intermedio/avanzado',
+        id: '008',
+      },
+      {
+        image: `${this.assets}/Ic_Bullet_3.svg`,
+        text: 'Conocimiento en metodologas agiles (deseable)',
+        id: '009',
+      },
+    ];
     this.benefits = [
       {
         image: `${this.assets}/Ic_Hour.svg`,
