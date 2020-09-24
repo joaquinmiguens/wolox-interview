@@ -9,13 +9,10 @@
     &__content {
       font-size: 32px;
       margin-bottom: 20vh;
-      &__title {
+      .title {
         @include montserrat-style;
         &__bold {
           font-weight: 700;
-          &__green {
-            color: $green;
-          }
         }
       }
     }
