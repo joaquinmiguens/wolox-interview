@@ -32,7 +32,7 @@
           <div class="woloxer__container__image__content__title">
             <span class="woloxer__container__image__content__title__green"
               >350 +</span
-            ><span class="woloxer__container__image__content__title__lightblue">
+            ><span class="woloxer__container__image__content__title lightblue">
               Woloxers</span
             >
           </div>
@@ -59,7 +59,7 @@
         <span class="woloxer__container__text__title">
           Trabajamos para
           <br />
-          <strong class="woloxer__container__text__title__lightblue"
+          <strong class="woloxer__container__text__title lightblue"
             >convertir</strong
           >
           <strong class="woloxer__container__text__title__green"> ideas</strong>
@@ -70,6 +70,38 @@
     </div>
   </section>
   <!-- Benefits -->
+  <section class="benefits" id="benefits">
+    <div class="benefits__container">
+      <div class="benefits__container__content">
+        <span class="benefits__container__content__title"
+          >Entre los beneficios que ofrecemos se encuentran
+          <span class="benefits__container__content__title lightblue"
+            >;)</span
+          ></span
+        >
+        <div class="benefits__container__content__list">
+          <div
+            class="benefits__container__content__list__item"
+            *ngFor="let benefit of benefits; trackBy: trackById"
+            id="{{ benefit.id }}"
+          >
+            <div class="benefits__container__content__list__item__content">
+              <div
+                class="benefits__container__content__list__item__content__vector"
+              >
+                <img src="{{ benefit.image }}" alt="" />
+              </div>
+              <span
+                class="benefits__container__content__list___item__content__title"
+              >
+                {{ benefit.title }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- Requeriments -->
   <!-- Footer -->
 </div>

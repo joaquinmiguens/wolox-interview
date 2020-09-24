@@ -7,7 +7,7 @@
     @include container;
     @include two-column-grid(50%, 50%, 0rem);
     &__content {
-      font-size: 28px;
+      font-size: 32px;
       margin-bottom: 20vh;
       &__title {
         @include montserrat-style;
@@ -22,7 +22,7 @@
     &__image {
       max-width: 75%;
       object-fit: contain;
-      justify-self: center;
+      justify-self: flex-end;
     }
   }
 }
