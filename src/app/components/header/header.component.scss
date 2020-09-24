@@ -3,16 +3,17 @@
 
 .navbar {
   position: fixed;
-  margin: auto;
-  max-width: 1700px;
-  padding: 30px 2rem 30px 0px;
-  overflow: hidden;
+  width: 100vw;
+  top: 0;
+  padding-top: 30px !important;
+  padding-bottom: 30px !important;
   transition: all 0.5s;
   z-index: 99;
   background: white;
 }
 
 .header {
+  @include container;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   &__logo {
@@ -42,15 +43,7 @@
         }
       }
       &__button {
-        position: relative;
-        background-color: transparent;
-        border: solid 1px;
-        border-color: $lightblue;
-        border-radius: 50px;
-        padding: 10px 80px !important;
-        font-size: 14px;
-        letter-spacing: 0.02em;
-        z-index: 0;
+        @include unfilled-button;
         &__link {
           color: $lightblue;
           mix-blend-mode: difference;
