@@ -4,6 +4,7 @@
   <section class="hero" id="hero">
     <app-showcase></app-showcase>
   </section>
+  <!-- Technologies -->
   <section class="tech" id="technologies">
     <div class="technologies">
       <!-- Title -->
@@ -23,8 +24,51 @@
       </div>
     </div>
   </section>
-  <!-- Technologies -->
   <!-- Woloxer -->
+  <section class="woloxer" id="woloxer">
+    <div class="woloxer__container">
+      <div class="woloxer__container__image">
+        <div class="woloxer__container__image__content">
+          <div class="woloxer__container__image__content__title">
+            <span class="woloxer__container__image__content__title__green"
+              >350 +</span
+            ><span class="woloxer__container__image__content__title__lightblue">
+              Woloxers</span
+            >
+          </div>
+          <div class="woloxer__container__image__content__media">
+            <div class="woloxer__container__image__content__media__twitter">
+              <fa-icon
+                class="woloxer__container__image__content__media__twitter__icon"
+                [icon]="twitterIcon"
+              ></fa-icon>
+              <span>@Wolox</span>
+            </div>
+            <div
+              class="woloxer__container__image__content__media__button"
+              (click)="navigateToTwitter()"
+            >
+              <a class="woloxer__container__image__content__media__button__link"
+                >Siguenos</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="woloxer__container__text">
+        <span class="woloxer__container__text__title">
+          Trabajamos para
+          <br />
+          <strong class="woloxer__container__text__title__lightblue"
+            >convertir</strong
+          >
+          <strong class="woloxer__container__text__title__green"> ideas</strong>
+          en <br />
+          productos.
+        </span>
+      </div>
+    </div>
+  </section>
   <!-- Benefits -->
   <!-- Requeriments -->
   <!-- Footer -->
