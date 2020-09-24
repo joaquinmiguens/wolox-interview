@@ -5,10 +5,11 @@ import { HomeRoutingModule } from './home-routing.module';
 import { ShowcaseComponent } from 'src/app/components/showcase/showcase.component';
 import { HeaderComponent } from 'src/app/components/header/header.component';
 import { HomeComponent } from './home.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [HeaderComponent, ShowcaseComponent, HomeComponent],
   exports: [HeaderComponent, ShowcaseComponent],
-  imports: [CommonModule, HomeRoutingModule],
+  imports: [CommonModule, HomeRoutingModule, FontAwesomeModule],
 })
 export class HomeModule {}
