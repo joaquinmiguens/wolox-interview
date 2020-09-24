@@ -19,14 +19,8 @@ $asset__path: "../../../assets";
     &__content {
       font-size: 24px;
       margin-right: 200px;
-      &__title {
+      .title {
         @include montserrat-style;
-        &__bold {
-          font-weight: 700;
-          &__green {
-            color: $green;
-          }
-        }
       }
     }
     &__image {
@@ -49,7 +43,7 @@ $asset__path: "../../../assets";
       background: url("#{$asset__path}/img_woloxer.png") no-repeat center/cover;
       width: 100%;
       height: 500px;
-      &__content {
+      .content {
         color: #fff;
         height: 100%;
         display: flex;
@@ -64,9 +58,6 @@ $asset__path: "../../../assets";
           font-size: 56px;
           font-weight: 700;
           margin-bottom: 40px;
-          &__green {
-            color: $green;
-          }
         }
         &__media {
           @include montserrat-style;
@@ -74,7 +65,7 @@ $asset__path: "../../../assets";
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          &__twitter {
+          .twitter {
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -85,7 +76,7 @@ $asset__path: "../../../assets";
               margin-right: 20px;
             }
           }
-          &__button {
+          .button {
             @include unfilled-button;
             padding: 30px 80px;
             cursor: pointer;
@@ -107,13 +98,10 @@ $asset__path: "../../../assets";
       justify-content: center;
       text-align: center;
       padding: 3rem;
-      &__title {
+      .title {
         @include montserrat-style;
         font-size: 48px;
         font-weight: 500;
-        &__green {
-          color: $green;
-        }
       }
     }
   }
@@ -121,18 +109,17 @@ $asset__path: "../../../assets";
 
 .benefits {
   @include section-separation;
-  padding-bottom: 15vh;
   &__container {
     @include container;
     overflow: visible;
     &__content {
       @include montserrat-style;
       text-align: center;
-      &__title {
+      .title {
         font-size: 34px;
         letter-spacing: 0.02em;
       }
-      &__list {
+      .list {
         display: flex;
         flex-wrap: wrap;
         margin: 30px 0px;
@@ -145,13 +132,25 @@ $asset__path: "../../../assets";
           text-align: center;
           display: flex;
           flex-direction: column;
+          @media screen and (max-width: 1200px) {
+            width: 33.33%;
+            margin: auto;
+          }
+          @media screen and (max-width: 600px) {
+            width: 50%;
+            margin: auto;
+          }
+          @media screen and (max-width: 468px) {
+            width: 100%;
+            margin: auto;
+          }
           &__content {
             display: flex;
             flex: 1 1 auto;
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
-            &__vector {
+            .vector {
               display: flex;
               justify-content: flex-start;
               margin-top: 16px;
@@ -159,7 +158,7 @@ $asset__path: "../../../assets";
               width: 97px;
               height: 97px;
             }
-            &__title {
+            .text {
               flex: 1 1 auto;
             }
           }
@@ -169,21 +168,32 @@ $asset__path: "../../../assets";
   }
 }
 
-@media screen and (max-width: 1200px) {
-  .benefits__container__content__list__item {
-    width: 33.33%;
-    margin: auto;
-  }
-}
-@media screen and (max-width: 600px) {
-  .benefits__container__content__list__item {
-    width: 50%;
-    margin: auto;
-  }
-}
-@media screen and (max-width: 468px) {
-  .benefits__container__content__list__item {
-    width: 100%;
-    margin: auto;
+.requiriments {
+  @include section-separation;
+  &__container {
+    @include container;
+    @include two-column-grid(45%, 55%, 0rem);
+    .content {
+      @include montserrat-style;
+      padding: 0 70px;
+      font-size: 24px;
+    }
+    .list {
+      display: flex;
+      align-items: center;
+      &__items {
+        @include montserrat-style;
+        font-size: 18px;
+        &__item {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          padding: 20px;
+          .image {
+            margin-right: 20px;
+          }
+        }
+      }
+    }
   }
 }

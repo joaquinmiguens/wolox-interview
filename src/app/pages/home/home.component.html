@@ -5,64 +5,49 @@
     <app-showcase></app-showcase>
   </section>
   <!-- Technologies -->
-  <section class="tech" id="technologies">
-    <div class="technologies">
-      <!-- Title -->
-      <div class="technologies__container">
-        <div class="technologies__container__content">
-          <h2 class="technologies__container__content__title">
-            Estamos buscando para incorporar gente increible para estas
-            tecnologias:
-          </h2>
-        </div>
-        <!-- Illustration -->
-        <img
-          src="../../../assets/Ic_Tecnologys.svg"
-          alt="Hero Image"
-          class="technologies__container__image"
-        />
+  <section class="technologies" id="technologies">
+    <!-- Title -->
+    <div class="technologies__container">
+      <div class="technologies__container__content">
+        <h2 class="title">
+          Estamos buscando para incorporar gente increible para estas
+          tecnologias:
+        </h2>
       </div>
+      <!-- Illustration -->
+      <img
+        src="../../../assets/Ic_Tecnologys.svg"
+        alt="Hero Image"
+        class="technologies__container__image"
+      />
     </div>
   </section>
   <!-- Woloxer -->
   <section class="woloxer" id="woloxer">
     <div class="woloxer__container">
       <div class="woloxer__container__image">
-        <div class="woloxer__container__image__content">
-          <div class="woloxer__container__image__content__title">
-            <span class="woloxer__container__image__content__title__green"
-              >350 +</span
-            ><span class="woloxer__container__image__content__title lightblue">
-              Woloxers</span
-            >
+        <div class="content">
+          <div class="content__title">
+            <span class="green">350 +</span
+            ><span class="lightblue"> Woloxers</span>
           </div>
-          <div class="woloxer__container__image__content__media">
-            <div class="woloxer__container__image__content__media__twitter">
-              <fa-icon
-                class="woloxer__container__image__content__media__twitter__icon"
-                [icon]="twitterIcon"
-              ></fa-icon>
+          <div class="content__media">
+            <div class="twitter">
+              <fa-icon class="twitter__icon" [icon]="twitterIcon"></fa-icon>
               <span>@Wolox</span>
             </div>
-            <div
-              class="woloxer__container__image__content__media__button"
-              (click)="navigateToTwitter()"
-            >
-              <a class="woloxer__container__image__content__media__button__link"
-                >Siguenos</a
-              >
+            <div class="button" (click)="navigateToTwitter()">
+              <a class="button__link">Siguenos</a>
             </div>
           </div>
         </div>
       </div>
       <div class="woloxer__container__text">
-        <span class="woloxer__container__text__title">
+        <span class="title">
           Trabajamos para
           <br />
-          <strong class="woloxer__container__text__title lightblue"
-            >convertir</strong
-          >
-          <strong class="woloxer__container__text__title__green"> ideas</strong>
+          <strong class="lightblue">convertir</strong>
+          <strong class="green"> ideas</strong>
           en <br />
           productos.
         </span>
@@ -73,27 +58,21 @@
   <section class="benefits" id="benefits">
     <div class="benefits__container">
       <div class="benefits__container__content">
-        <span class="benefits__container__content__title"
+        <span class="title"
           >Entre los beneficios que ofrecemos se encuentran
-          <span class="benefits__container__content__title lightblue"
-            >;)</span
-          ></span
+          <span class="lightblue">;)</span></span
         >
-        <div class="benefits__container__content__list">
+        <div class="list">
           <div
-            class="benefits__container__content__list__item"
+            class="list__item"
             *ngFor="let benefit of benefits; trackBy: trackById"
             id="{{ benefit.id }}"
           >
-            <div class="benefits__container__content__list__item__content">
-              <div
-                class="benefits__container__content__list__item__content__vector"
-              >
+            <div class="list__item__content">
+              <div class="vector">
                 <img src="{{ benefit.image }}" alt="" />
               </div>
-              <span
-                class="benefits__container__content__list___item__content__title"
-              >
+              <span class="text">
                 {{ benefit.title }}
               </span>
             </div>
@@ -103,5 +82,27 @@
     </div>
   </section>
   <!-- Requeriments -->
+  <section class="requiriments" id="requiriments">
+    <!-- Title -->
+    <div class="requiriments__container">
+      <div class="content">
+        <h2 class="content__title">Requerimientos</h2>
+      </div>
+      <!-- List -->
+      <div class="list">
+        <ul class="list__items">
+          <li
+            class="list__items__item"
+            *ngFor="let requiriment of requiriments"
+            id="{{ requiriment.id }}"
+          >
+            <span class="image"
+              ><img src="{{ requiriment.image }}" alt="" /></span
+            ><span>{{ requiriment.text }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
   <!-- Footer -->
 </div>
