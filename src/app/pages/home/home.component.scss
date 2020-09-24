@@ -3,12 +3,6 @@ $asset__path: "../../../assets";
 @import "../../../scss/mixins.scss";
 @import "../../../scss/variables.scss";
 
-.home {
-  max-width: 1700px;
-  margin: auto;
-  overflow: hidden;
-  padding: 0 2rem !important;
-}
 .hero {
   background-image: url("#{$asset__path}/Backgrounds/Bg_Header.png");
   background-position: right center;
@@ -20,10 +14,11 @@ $asset__path: "../../../assets";
 .technologies {
   @include section-separation;
   &__container {
-    @include two-column-grid(2, 3rem);
+    @include container;
+    @include two-column-grid(50%, 50%, 0rem);
     &__content {
       font-size: 24px;
-      margin-right: 100px;
+      margin-right: 200px;
       &__title {
         @include montserrat-style;
         &__bold {
@@ -38,6 +33,94 @@ $asset__path: "../../../assets";
       max-width: 100%;
       object-fit: contain;
       justify-self: center;
+    }
+  }
+}
+
+.woloxer {
+  @include section-separation;
+  margin: 0;
+  &__container {
+    @include two-column-grid(55%, 45%, 0rem);
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    &__image {
+      position: relative;
+      background: url("#{$asset__path}/img_woloxer.png") no-repeat center/cover;
+      width: 100%;
+      height: 500px;
+      &__content {
+        color: #fff;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: auto;
+        padding: 6rem 0;
+        &__title {
+          @include montserrat-style;
+          font-size: 56px;
+          font-weight: 700;
+          margin-bottom: 40px;
+          &__green {
+            color: $green;
+          }
+          &__lightblue {
+            color: $lightblue;
+          }
+        }
+        &__media {
+          @include montserrat-style;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          &__twitter {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            &__icon {
+              font-size: 48px;
+              margin-right: 20px;
+            }
+          }
+          &__button {
+            @include unfilled-button;
+            padding: 30px 80px;
+            cursor: pointer;
+            &__link {
+              @include montserrat-style;
+              font-size: 18px;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+    &__text {
+      background-color: #f2f5fa;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 3rem;
+      &__title {
+        @include montserrat-style;
+        font-size: 48px;
+        font-weight: 500;
+        &__lightblue {
+          color: $lightblue;
+        }
+        &__green {
+          color: $green;
+        }
+      }
     }
   }
 }
