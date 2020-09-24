@@ -67,9 +67,6 @@ $asset__path: "../../../assets";
           &__green {
             color: $green;
           }
-          &__lightblue {
-            color: $lightblue;
-          }
         }
         &__media {
           @include montserrat-style;
@@ -114,13 +111,79 @@ $asset__path: "../../../assets";
         @include montserrat-style;
         font-size: 48px;
         font-weight: 500;
-        &__lightblue {
-          color: $lightblue;
-        }
         &__green {
           color: $green;
         }
       }
     }
+  }
+}
+
+.benefits {
+  @include section-separation;
+  padding-bottom: 15vh;
+  &__container {
+    @include container;
+    overflow: visible;
+    &__content {
+      @include montserrat-style;
+      text-align: center;
+      &__title {
+        font-size: 34px;
+        letter-spacing: 0.02em;
+      }
+      &__list {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 30px 0px;
+        box-shadow: 0 10px 15px -6px rgba(242, 245, 250, 1),
+          inset 0 -10px 15px -6px rgba(242, 245, 250, 1);
+        &__item {
+          width: 16.66%;
+          padding: 30px;
+          margin-bottom: 30px;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          &__content {
+            display: flex;
+            flex: 1 1 auto;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            &__vector {
+              display: flex;
+              justify-content: flex-start;
+              margin-top: 16px;
+              margin-bottom: 20px;
+              width: 97px;
+              height: 97px;
+            }
+            &__title {
+              flex: 1 1 auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .benefits__container__content__list__item {
+    width: 33.33%;
+    margin: auto;
+  }
+}
+@media screen and (max-width: 600px) {
+  .benefits__container__content__list__item {
+    width: 50%;
+    margin: auto;
+  }
+}
+@media screen and (max-width: 468px) {
+  .benefits__container__content__list__item {
+    width: 100%;
+    margin: auto;
   }
 }
