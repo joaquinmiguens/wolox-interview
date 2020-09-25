@@ -6,11 +6,21 @@
   &__container {
     @include container;
     @include two-column-grid(50%, 50%, 0rem);
+    @media screen and (max-width: 1024px) {
+      grid-template-columns: 1fr;
+      @include mobile__padding;
+    }
     &__content {
-      font-size: 32px;
+      /* font-size: 2rem; */
       margin-bottom: 20vh;
+      @media screen and (max-width: 1024px) {
+        margin-bottom: 40px;
+        order: 2;
+        max-width: 500px;
+      }
       .title {
         @include montserrat-style;
+        font-size: 3rem;
         &__bold {
           font-weight: 700;
         }
@@ -20,6 +30,10 @@
       max-width: 75%;
       object-fit: contain;
       justify-self: flex-end;
+      @media screen and (max-width: 1024px) {
+        justify-self: center;
+        order: -1;
+      }
     }
   }
 }

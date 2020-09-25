@@ -1,13 +1,10 @@
-$asset__path: "../../../assets";
-
 @import "../../../scss/mixins.scss";
 @import "../../../scss/variables.scss";
 
 .hero {
-  background-image: url("#{$asset__path}/Backgrounds/Bg_Header.png");
-  background-position: right center;
-  background-repeat: no-repeat;
-  background-size: 100% auto;
+  background: url("#{$asset__path}/Backgrounds/Bg_Header.png") no-repeat bottom
+    center/cover;
+
   margin: 2rem 0;
 }
 
@@ -16,9 +13,23 @@ $asset__path: "../../../assets";
   &__container {
     @include container;
     @include two-column-grid(50%, 50%, 0rem);
+    @media screen and (max-width: 1024px) {
+      @include mobile__padding;
+    }
+    @media screen and (max-width: 960px) {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
     &__content {
-      font-size: 24px;
+      font-size: 1.5rem;
       margin-right: 200px;
+      @media screen and (max-width: 1024px) {
+        margin-right: 50px;
+      }
+      @media screen and (max-width: 960px) {
+        margin-bottom: 50px;
+        margin-right: 0;
+      }
       .title {
         @include montserrat-style;
       }
@@ -38,6 +49,9 @@ $asset__path: "../../../assets";
     @include two-column-grid(55%, 45%, 0rem);
     padding-left: 0 !important;
     padding-right: 0 !important;
+    @media screen and (max-width: 960px) {
+      grid-template-columns: 1fr;
+    }
     &__image {
       position: relative;
       background: url("#{$asset__path}/img_woloxer.png") no-repeat center/cover;
@@ -52,10 +66,10 @@ $asset__path: "../../../assets";
         justify-content: center;
         text-align: center;
         margin: auto;
-        padding: 6rem 0;
+        padding: 6rem 2rem;
         &__title {
           @include montserrat-style;
-          font-size: 56px;
+          font-size: 3.8rem;
           font-weight: 700;
           margin-bottom: 40px;
         }
@@ -69,10 +83,10 @@ $asset__path: "../../../assets";
             display: flex;
             flex-direction: row;
             align-items: center;
-            font-size: 24px;
+            font-size: 2rem;
             margin-bottom: 20px;
             &__icon {
-              font-size: 48px;
+              font-size: 3rem;
               margin-right: 20px;
             }
           }
@@ -82,7 +96,7 @@ $asset__path: "../../../assets";
             cursor: pointer;
             &__link {
               @include montserrat-style;
-              font-size: 18px;
+              font-size: 1.25rem;
               color: white;
             }
           }
@@ -100,7 +114,7 @@ $asset__path: "../../../assets";
       padding: 3rem;
       .title {
         @include montserrat-style;
-        font-size: 48px;
+        font-size: 3rem;
         font-weight: 500;
       }
     }
@@ -111,12 +125,17 @@ $asset__path: "../../../assets";
   @include section-separation;
   &__container {
     @include container;
-    overflow: visible;
+    @media screen and (max-width: 1024px) {
+      @include mobile__padding;
+    }
+    @media screen and (max-width: 960px) {
+      grid-template-columns: 1fr;
+    }
     &__content {
       @include montserrat-style;
       text-align: center;
       .title {
-        font-size: 34px;
+        font-size: 2rem;
         letter-spacing: 0.02em;
       }
       .list {
@@ -160,6 +179,10 @@ $asset__path: "../../../assets";
             }
             .text {
               flex: 1 1 auto;
+              font-size: 1rem;
+              @media screen and (max-width: 960px) {
+                font-size: 1.5rem;
+              }
             }
           }
         }
@@ -173,17 +196,28 @@ $asset__path: "../../../assets";
   &__container {
     @include container;
     @include two-column-grid(45%, 55%, 0rem);
+    @media screen and (max-width: 1024px) {
+      @include mobile__padding;
+    }
+    @media screen and (max-width: 960px) {
+      grid-template-columns: 1fr;
+    }
     .content {
       @include montserrat-style;
       padding: 0 70px;
-      font-size: 24px;
+      font-size: 1.5rem;
+      @media screen and (max-width: 960px) {
+        text-align: center;
+        font-size: 1.5rem;
+        margin-bottom: 50px;
+      }
     }
     .list {
       display: flex;
       align-items: center;
       &__items {
         @include montserrat-style;
-        font-size: 18px;
+        font-size: 1.2rem;
         &__item {
           display: flex;
           flex-direction: row;
@@ -196,4 +230,7 @@ $asset__path: "../../../assets";
       }
     }
   }
+}
+.footer {
+  @include section-separation;
 }

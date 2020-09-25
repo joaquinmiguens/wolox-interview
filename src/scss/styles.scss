@@ -22,3 +22,18 @@ li {
 .green {
   color: $green;
 }
+html {
+  font-size: 16px;
+  @media screen and (max-width: 960px) {
+    font-size: 14px;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 12px;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 10px;
+  }
+  @media screen and (max-width: 350px) {
+    font-size: 9px;
+  }
+}
