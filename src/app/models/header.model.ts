@@ -4,4 +4,5 @@ export interface HeaderTabs {
   fragment: string;
   id: string;
   button: boolean;
+  active: boolean;
 }

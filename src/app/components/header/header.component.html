@@ -15,18 +15,17 @@
           id="{{ tab.id }}"
         >
           <a
-            class="item__link"
+            [ngClass]="{ item__link: true, active: tab.active ? true : false }"
             routerLink="{{ tab.routerLink }}"
-            routerLinkActive="router-link-active"
             fragment="{{ tab.fragment }}"
             *ngIf="!tab.button"
+            (click)="activeTab(tab.id)"
             >{{ tab.text }}</a
           >
           <div class="item__button" *ngIf="tab.button">
             <a
               class="item__button__link"
               routerLink="{{ tab.routerLink }}"
-              routerLinkActive="router-link-active"
               fragment="{{ tab.fragment }}"
               >{{ tab.text }}</a
             >

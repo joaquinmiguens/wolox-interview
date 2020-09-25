@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeModule } from './pages/home/home.module';
 import { LoginModule } from './pages/login/login.module';
 import { TechListModule } from './pages/tech-list/tech-list.module';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SharedModule } from './shared/shared/shared.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,8 +15,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HomeModule,
     LoginModule,
     TechListModule,
+    SharedModule,
     AppRoutingModule,
-    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

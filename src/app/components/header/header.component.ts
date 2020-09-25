@@ -14,6 +14,7 @@ export class HeaderComponent implements OnInit {
       fragment: '',
       id: '',
       button: false,
+      active: false,
     },
   ];
   constructor() {
@@ -24,6 +25,7 @@ export class HeaderComponent implements OnInit {
         fragment: 'hero',
         id: '001',
         button: false,
+        active: true,
       },
       {
         text: 'Tecnologias',
@@ -31,6 +33,7 @@ export class HeaderComponent implements OnInit {
         fragment: 'technologies',
         id: '002',
         button: false,
+        active: false,
       },
       {
         text: 'Beneficios',
@@ -38,6 +41,7 @@ export class HeaderComponent implements OnInit {
         fragment: 'benefits',
         id: '003',
         button: false,
+        active: false,
       },
       {
         text: 'Requerimientos',
@@ -45,6 +49,7 @@ export class HeaderComponent implements OnInit {
         fragment: 'requiriments',
         id: '004',
         button: false,
+        active: false,
       },
       {
         text: 'Login',
@@ -52,6 +57,7 @@ export class HeaderComponent implements OnInit {
         fragment: '',
         id: '005',
         button: true,
+        active: false,
       },
     ];
   }
@@ -60,5 +66,15 @@ export class HeaderComponent implements OnInit {
 
   trackById(index: number, item: HeaderTabs): string {
     return item.id;
+  }
+  activeTab(id: string) {
+    this.tabs.map((tab: HeaderTabs) => {
+      if (tab.active) {
+        tab.active = false;
+      }
+      if (tab.id === id) {
+        tab.active = true;
+      }
+    });
   }
 }
