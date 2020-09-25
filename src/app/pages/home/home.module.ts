@@ -6,10 +6,16 @@ import { ShowcaseComponent } from 'src/app/components/showcase/showcase.componen
 import { HeaderComponent } from 'src/app/components/header/header.component';
 import { HomeComponent } from './home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FooterComponent } from 'src/app/components/footer/footer.component';
 
 @NgModule({
-  declarations: [HeaderComponent, ShowcaseComponent, HomeComponent],
-  exports: [HeaderComponent, ShowcaseComponent],
+  declarations: [
+    HeaderComponent,
+    ShowcaseComponent,
+    FooterComponent,
+    HomeComponent,
+  ],
+  exports: [HeaderComponent, ShowcaseComponent, FooterComponent],
   imports: [CommonModule, HomeRoutingModule, FontAwesomeModule],
 })
 export class HomeModule {}
