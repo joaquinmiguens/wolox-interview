@@ -8,7 +8,7 @@
       <img src="../../../assets/dev.svg" />
     </div>
     <div class="login__container__form">
-      <form>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <img class="avatar" src="../../../assets/avatar.svg" alt="" />
         <span class="title">Login</span>
         <div class="input">
@@ -28,20 +28,33 @@
               <input
                 type="{{ input.type }}"
                 class="text__field"
+                id="{{ input.type }}"
+                formControlName="{{ input.type }}"
                 (focus)="onFocus(input.id)"
                 (keyup)="onKey($event, input.id)"
                 (blur)="onBlur(input.id)"
               />
             </div>
+            <!--             <span class="error" *ngIf="`#{email.status}`">{{
+              input.type
+            }}</span> -->
           </div>
           <div class="input__checkbox">
             <label class="container"
               >Mantener mi sesion iniciada
-              <input class="container__input" type="checkbox" />
+              <input
+                class="container__input"
+                type="checkbox"
+                formControlName="checkbox"
+              />
               <span class="checkmark"></span>
             </label>
           </div>
-          <button type="submit" class="input__button">
+          <button
+            type="submit"
+            class="input__button"
+            [disabled]="loginForm.invalid"
+          >
             <a class="input__button__link">Login</a>
           </button>
         </div>
