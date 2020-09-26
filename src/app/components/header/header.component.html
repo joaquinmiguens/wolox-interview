@@ -1,4 +1,7 @@
-<nav class="navbar">
+<nav
+  [ngClass]="{ navbar: true, sticky: isSticky ? true : false }"
+  (scroll)="onScroll($event)"
+>
   <div class="header">
     <!-- Logo -->
     <img
