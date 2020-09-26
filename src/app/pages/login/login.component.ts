@@ -1,6 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  FormBuilder,
+} from '@angular/forms';
+import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
+
 import { faLock, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { AuthService } from '../../service/auth.service';
 
 export interface Input {
   text: string;
@@ -10,12 +20,15 @@ export interface Input {
   focus: boolean;
   value: string;
 }
+export interface Token {
+  token: string;
+}
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
   public emailIcon: IconDefinition = faEnvelope;
   public passIcon: IconDefinition = faLock;
   public width: number;
@@ -30,9 +43,15 @@ export class LoginComponent implements OnInit {
       value: '',
     },
   ];
-  constructor() {
+
+  public loginForm: FormGroup;
+  public subscription: Subscription;
+  constructor(
+    private formBuilder: FormBuilder,
+    public authService: AuthService,
+    private router: Router
+  ) {
     this.width = window.screen.width;
-    console.log(this.width);
     if (this.width <= 900) {
       this.isImage = false;
     } else {
@@ -42,7 +61,7 @@ export class LoginComponent implements OnInit {
       {
         text: 'Email',
         icon: this.emailIcon,
-        type: 'text',
+        type: 'email',
         id: '010',
         focus: false,
         value: '',
@@ -58,9 +77,27 @@ export class LoginComponent implements OnInit {
     ];
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.loginForm = this.formBuilder.group({
+      email: new FormControl('', [
+        Validators.required,
+        Validators.pattern(
+          "[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?"
+        ),
+      ]),
+      password: new FormControl('', [
+        Validators.required,
+        Validators.minLength(8),
+      ]),
+      checkbox: new FormControl(''),
+    });
+  }
+  ngOnDestroy(): void {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+  }
   onFocus(id: string) {
-    console.log(id);
     this.inputs.map(($input: Input) => {
       if ($input.id === id) {
         $input.focus = true;
@@ -81,5 +118,22 @@ export class LoginComponent implements OnInit {
         $input.value = inputValue;
       }
     });
+  }
+  onSubmit() {
+    this.subscription = this.authService
+      .login(this.loginForm.value.email, this.loginForm.value.password)
+      .subscribe((response: Token) => {
+        this.inputs.map(($input: Input) => {
+          $input.focus = false;
+        });
+        if (this.loginForm.value.checkbox) {
+          console.log('guardar en local storage');
+          const token: string = response.token;
+          localStorage.setItem('userToken', JSON.stringify(token));
+        }
+        this.loginForm.reset();
+
+        this.router.navigate(['/tech-list']);
+      });
   }
 }
