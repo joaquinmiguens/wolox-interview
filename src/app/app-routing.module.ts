@@ -1,18 +1,23 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { GuestGuard } from './guard/guest.guard';
+import { LoggedInGuard } from './guard/logged-in.guard';
+import { AuthService } from './service/auth.service';
 
 const routes: Routes = [
   {
-    path: 'login',
-    loadChildren: () =>
-      import('./pages/login/login.module').then((m) => m.LoginModule),
-  },
-  {
     path: 'tech-list',
+    canActivate: [LoggedInGuard],
     loadChildren: () =>
       import('./pages/tech-list/tech-list.module').then(
         (m) => m.TechListModule
       ),
+  },
+  {
+    path: 'login',
+    canActivate: [GuestGuard],
+    loadChildren: () =>
+      import('./pages/login/login.module').then((m) => m.LoginModule),
   },
   {
     path: 'home',
@@ -24,6 +29,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
+  providers: [AuthService],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
