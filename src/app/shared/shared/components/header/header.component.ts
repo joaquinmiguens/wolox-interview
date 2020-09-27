@@ -89,7 +89,7 @@ export class HeaderComponent implements OnInit {
       }
     });
   }
-  openMenu() {
+  toggleMenu() {
     if (this.isMenuOpen) {
       this.isMenuOpen = false;
     } else {
