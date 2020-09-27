@@ -16,7 +16,7 @@
     <div
       [ngClass]="{ mobile: true, cancel: isMenuOpen ? true : false }"
       *ngIf="mobile"
-      (click)="openMenu()"
+      (click)="toggleMenu()"
     >
       <span class="mobile__bar"></span>
       <span class="mobile__bar"></span>
@@ -32,6 +32,7 @@
         class="item"
         *ngFor="let tab of tabs; trackBy: trackById"
         id="{{ tab.id }}"
+        (click)="toggleMenu()"
       >
         <a
           [ngClass]="{ item__link: true, active: tab.active ? true : false }"
@@ -41,11 +42,12 @@
           (click)="activeTab(tab.id)"
           >{{ tab.text }}</a
         >
-        <div class="item__button" *ngIf="tab.button">
+        <div class="item__button" *ngIf="tab.button" (click)="toggleMenu()">
           <a
             class="item__button__link"
             routerLink="{{ tab.routerLink }}"
             fragment="{{ tab.fragment }}"
+            (click)="toggleMenu()"
             >{{ tab.text }}</a
           >
         </div>
