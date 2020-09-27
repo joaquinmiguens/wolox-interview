@@ -10,6 +10,8 @@ import { DOCUMENT } from '@angular/common';
 export class HeaderComponent implements OnInit {
   private isToken: string;
   public isSticky: boolean;
+  public mobile: boolean;
+  public isMenuOpen: boolean;
   public tabs: Array<HeaderTabs> = [
     {
       text: '',
@@ -21,6 +23,8 @@ export class HeaderComponent implements OnInit {
     },
   ];
   constructor(@Inject(DOCUMENT) document) {
+    this.mobile = false;
+    this.isMenuOpen = false;
     this.isToken = JSON.parse(localStorage.getItem('userToken'));
     this.tabs = [
       {
@@ -66,7 +70,11 @@ export class HeaderComponent implements OnInit {
     ];
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (window.innerWidth <= 900) {
+      this.mobile = true;
+    }
+  }
 
   trackById(index: number, item: HeaderTabs): string {
     return item.id;
@@ -80,6 +88,13 @@ export class HeaderComponent implements OnInit {
         tab.active = true;
       }
     });
+  }
+  openMenu() {
+    if (this.isMenuOpen) {
+      this.isMenuOpen = false;
+    } else {
+      this.isMenuOpen = true;
+    }
   }
 
   @HostListener('window:scroll', ['$event'])

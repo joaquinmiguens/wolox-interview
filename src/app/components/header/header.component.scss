@@ -5,11 +5,15 @@
   position: fixed;
   width: 100vw;
   top: 0;
-  padding: 35px 0px !important;
+  padding-top: 35px;
   z-index: 99;
   transition: all 0.6s;
-  &.sticky {
+  &.sticky,
+  &.fill {
     background: white;
+  }
+  @media screen and (max-width: 900px) {
+    padding-top: 25px !important    ;
   }
 }
 
@@ -17,20 +21,92 @@
   @include container;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  @media screen and (max-width: 1024px) {
+    @include mobile__padding;
+  }
+  @media screen and (max-width: 900px) {
+    height: 60px;
+    grid-template-columns: 3fr 1fr;
+  }
+  .mobile {
+    justify-self: end;
+    align-self: center;
+    cursor: pointer;
+    display: block;
+    &.cancel {
+      .mobile__bar {
+        &:nth-child(1) {
+          -webkit-transform: translateY(8px) rotate(45deg);
+          -ms-transform: translateY(8px) rotate(45deg);
+          -o-transform: translateY(8px) rotate(45deg);
+          transform: translateY(8px) rotate(45deg);
+        }
+        &:nth-child(2) {
+          opacity: 0;
+        }
+        &:nth-child(3) {
+          -webkit-transform: translateY(-8px) rotate(-45deg);
+          -ms-transform: translateY(-8px) rotate(-45deg);
+          -o-transform: translateY(-8px) rotate(-45deg);
+          transform: translateY(-8px) rotate(-45deg);
+        }
+      }
+    }
+    &__bar {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: #121212;
+      margin: 5px auto;
+      transition: all 0.35s ease-in-out;
+    }
+  }
   &__logo {
-    max-width: 200px;
-    object-fit: contain;
     align-self: center;
     transition: 0.6s;
-  }
-  &__menu {
-    height: 100%;
-    &__list {
-      justify-self: flex-end;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    img {
+      max-width: 200px;
+      object-fit: contain;
+      @media screen and (max-width: 1280px) {
+        max-width: 150px;
+      }
     }
+  }
+  &__menu__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media screen and (max-width: 900px) {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      justify-content: flex-start;
+      top: 85px;
+      right: 0;
+      background-color: transparent;
+      width: 50vw;
+      height: calc(100vh - 85px);
+      transform: translate(101%);
+      text-align: center;
+      overflow: hidden;
+      transition: transform 0.7s ease-in-out, background-color 0.6s ease-in-out;
+      @media screen and (max-width: 500px) {
+        width: 60vw;
+      }
+      &:first {
+        margin-top: 50px;
+      }
+      &.open {
+        transform: translate(0%);
+        transition: transform 0.7s ease-in-out,
+          background-color 0.6s ease-in-out;
+        background-color: white;
+        &:first-child {
+          margin-top: 50px;
+        }
+      }
+    }
+
     .item {
       list-style: none;
       padding-left: 50px;
@@ -39,6 +115,14 @@
       cursor: pointer;
       font-family: "Montserrat", sans-serif;
       transition: 0.6s;
+      @media screen and (max-width: 1280px) {
+        font-size: 1rem;
+        padding-left: 30px;
+      }
+      @media screen and (max-width: 900px) {
+        padding: 3rem;
+        font-size: 2rem;
+      }
       &__link {
         color: #121212;
         &:hover {
@@ -47,6 +131,15 @@
       }
       &__button {
         @include unfilled-button;
+        @media screen and (max-width: 1280px) {
+          padding-left: 40px !important;
+          padding-right: 40px !important;
+        }
+        @media screen and (max-width: 900px) {
+          padding-left: 60px !important;
+          padding-right: 60px !important;
+          font-size: 1.5rem;
+        }
         &__link {
           color: $lightblue;
           mix-blend-mode: difference;
