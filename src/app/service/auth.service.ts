@@ -23,7 +23,7 @@ export class AuthService {
     console.log(email, password);
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http
-      .post(
+      .post<object>(
         'http://private-8e8921-woloxfrontendinverview.apiary-mock.com/login',
         body,
         { headers }

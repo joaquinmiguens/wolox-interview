@@ -8,8 +8,11 @@ import {
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 
-import { faLock, IconDefinition } from '@fortawesome/free-solid-svg-icons';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import {
+  faLock,
+  faEnvelope,
+  IconDefinition,
+} from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from '../../service/auth.service';
 
 export interface Input {

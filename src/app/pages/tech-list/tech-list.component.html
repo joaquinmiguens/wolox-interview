@@ -1,0 +1,39 @@
+<div class="techList">
+  <!-- NavBar -->
+  <div class="techList__container">
+    <div class="techList__container__heading">
+      <!-- Title -->
+      <span class="title"> Nuestros <span class="green">Devs</span> </span>
+      <!-- subtitle -->
+      <span class="subtitle"
+        >Postulantes de tecnologias Front-End, Back-End y Mobile</span
+      >
+    </div>
+    <div class="techList__container__content">
+      <div class="box">
+        <div class="box__header">
+          <div class="searchBar">
+            <fa-icon class="searchBar__icon" [icon]="searchIcon"></fa-icon>
+            <input
+              #input
+              type="text"
+              class="searchBar__field"
+              placeholder="Buscar..."
+              (keyup)="onKey(input.value)"
+            />
+          </div>
+          <div class="nameFilter">
+            <span>Filter</span>
+          </div>
+        </div>
+        <div class="list">
+          <!-- Candidate -->
+          <app-list-item
+            *ngFor="let candidate of candidates | searchPipe: searchText"
+            [candidate]="candidate"
+          ></app-list-item>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

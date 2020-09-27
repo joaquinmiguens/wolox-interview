@@ -16,6 +16,7 @@ import { LoggedInGuard } from './guard/logged-in.guard';
 import { AuthService } from './service/auth.service';
 import { AppService } from './app.service';
 import { HttpClientModule } from '@angular/common/http';
+import { TechListService } from './service/tech-list.service';
 
 export function appInit(appService: AppService) {
   return () => appService.initializeApp();
@@ -34,6 +35,7 @@ export function appInit(appService: AppService) {
   ],
   providers: [
     AuthService,
+    TechListService,
     GuestGuard,
     LoggedInGuard,
     AppService,
