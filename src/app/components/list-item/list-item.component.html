@@ -1,0 +1,22 @@
+<div class="item">
+  <div class="item__content">
+    <div class="item__content__left">
+      <!-- Type -->
+      <span class="type">{{ candidate.type }}</span>
+      <!-- Name -->
+      <span class="name">{{ candidate.author }}</span>
+      <!-- Row of tech -->
+      <div class="details">
+        <ul>
+          <li class="techRow__item">{{ candidate.tech }}</li>
+          <li class="techRow__item">{{ candidate.language }}</li>
+          <li class="techRow__item">{{ candidate.year }}</li>
+          <li class="techRow__item">{{ candidate.license }}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="item__content__right">
+      <img src="{{ candidate.logo }}" alt="imagen!" />
+    </div>
+  </div>
+</div>
