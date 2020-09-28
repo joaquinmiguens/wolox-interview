@@ -28,7 +28,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 7rem;
-  @include montserrat-style;
+  @include montserrat__style;
   @media screen and (max-width: 1200px) {
     column-gap: 5rem;
     @include mobile__padding;
