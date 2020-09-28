@@ -9,10 +9,10 @@
 }
 
 .technologies {
-  @include section-separation;
+  @include section__separation;
   &__container {
     @include container;
-    @include two-column-grid(50%, 50%, 0rem);
+    @include two__column__grid(50%, 50%, 0rem);
     @media screen and (max-width: 1024px) {
       @include mobile__padding;
     }
@@ -31,7 +31,7 @@
         margin-right: 0;
       }
       .title {
-        @include montserrat-style;
+        @include montserrat__style;
       }
     }
     &__image {
@@ -43,10 +43,10 @@
 }
 
 .woloxer {
-  @include section-separation;
+  @include section__separation;
   margin: 0;
   &__container {
-    @include two-column-grid(55%, 45%, 0rem);
+    @include two__column__grid(55%, 45%, 0rem);
     padding-left: 0 !important;
     padding-right: 0 !important;
     @media screen and (max-width: 960px) {
@@ -68,13 +68,13 @@
         margin: auto;
         padding: 6rem 2rem;
         &__title {
-          @include montserrat-style;
+          @include montserrat__style;
           font-size: 3.8rem;
           font-weight: 700;
           margin-bottom: 40px;
         }
         &__media {
-          @include montserrat-style;
+          @include montserrat__style;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -91,13 +91,23 @@
             }
           }
           .button {
-            @include unfilled-button;
+            @include unfilled__button;
             padding: 30px 80px;
-            cursor: pointer;
+            &:hover {
+              .button__arrow {
+                left: 80%;
+              }
+            }
+            &::after {
+              @include button__after;
+            }
             &__link {
-              @include montserrat-style;
+              @include montserrat__style;
               font-size: 1.25rem;
               color: white;
+            }
+            &__arrow {
+              @include button__arrow;
             }
           }
         }
@@ -113,7 +123,7 @@
       text-align: center;
       padding: 3rem;
       .title {
-        @include montserrat-style;
+        @include montserrat__style;
         font-size: 3rem;
         font-weight: 500;
       }
@@ -122,7 +132,7 @@
 }
 
 .benefits {
-  @include section-separation;
+  @include section__separation;
   &__container {
     @include container;
     @media screen and (max-width: 1024px) {
@@ -132,7 +142,7 @@
       grid-template-columns: 1fr;
     }
     &__content {
-      @include montserrat-style;
+      @include montserrat__style;
       text-align: center;
       .title {
         font-size: 2rem;
@@ -192,10 +202,10 @@
 }
 
 .requiriments {
-  @include section-separation;
+  @include section__separation;
   &__container {
     @include container;
-    @include two-column-grid(45%, 55%, 0rem);
+    @include two__column__grid(45%, 55%, 0rem);
     @media screen and (max-width: 1024px) {
       @include mobile__padding;
     }
@@ -203,7 +213,7 @@
       grid-template-columns: 1fr;
     }
     .content {
-      @include montserrat-style;
+      @include montserrat__style;
       padding: 0 70px;
       font-size: 1.5rem;
       @media screen and (max-width: 960px) {
@@ -216,7 +226,7 @@
       display: flex;
       align-items: center;
       &__items {
-        @include montserrat-style;
+        @include montserrat__style;
         font-size: 1.2rem;
         &__item {
           display: flex;
@@ -232,5 +242,5 @@
   }
 }
 .footer {
-  @include section-separation;
+  @include section__separation;
 }

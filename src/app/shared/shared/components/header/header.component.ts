@@ -2,6 +2,11 @@ import { Component, HostListener, Inject, OnInit } from '@angular/core';
 import { HeaderTabs } from 'src/app/models/header.model';
 import { DOCUMENT } from '@angular/common';
 
+import {
+  faArrowRight,
+  IconDefinition,
+} from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -12,6 +17,7 @@ export class HeaderComponent implements OnInit {
   public isSticky: boolean;
   public mobile: boolean;
   public isMenuOpen: boolean;
+  public arrowIcon: IconDefinition = faArrowRight;
   public tabs: Array<HeaderTabs> = [
     {
       text: '',

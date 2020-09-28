@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { Benefit } from '../../models/benefit.model';
 import { Requiriment } from '../../models/requiriment.model';
+
+import {
+  faArrowRight,
+  IconDefinition,
+} from '@fortawesome/free-solid-svg-icons';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +14,8 @@ import { Requiriment } from '../../models/requiriment.model';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  public twitterIcon = faTwitter;
+  public twitterIcon: IconDefinition = faTwitter;
+  public arrowIcon: IconDefinition = faArrowRight;
   public assets: string;
   public benefits: Array<Benefit> = [
     {

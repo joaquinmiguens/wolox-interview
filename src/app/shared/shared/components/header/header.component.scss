@@ -131,7 +131,7 @@
         }
       }
       &__button {
-        @include unfilled-button;
+        @include unfilled__button;
         @media screen and (max-width: 1280px) {
           padding-left: 40px !important;
           padding-right: 40px !important;
@@ -141,29 +141,19 @@
           padding-right: 60px !important;
           font-size: 1.5rem;
         }
+        &:hover {
+          .item__button__arrow {
+            left: 80%;
+          }
+        }
         &__link {
           color: $lightblue;
-          mix-blend-mode: difference;
         }
-        &::before {
-          transition: all 0.85s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-          content: "";
-          width: 0%;
-          height: 100%;
-          border-radius: 50px;
-          background: $lightblue;
-          color: white;
-          position: absolute;
-          top: 0;
-          left: 0;
+        &:after {
+          @include button__after;
         }
-        &:hover {
-          &::before {
-            background: $lightblue;
-            width: 100%;
-            opacity: 0.2;
-            border-radius: 50px;
-          }
+        &__arrow {
+          @include button__arrow;
         }
       }
     }
