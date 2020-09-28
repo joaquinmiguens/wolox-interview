@@ -2,10 +2,10 @@
 @import "../../../scss/variables.scss";
 
 .showcase {
-  @include section-separation;
+  @include section__separation;
   &__container {
     @include container;
-    @include two-column-grid(50%, 50%, 0rem);
+    @include two__column__grid(50%, 50%, 0rem);
     @media screen and (max-width: 1024px) {
       grid-template-columns: 1fr;
       @include mobile__padding;
@@ -19,7 +19,7 @@
         max-width: 500px;
       }
       .title {
-        @include montserrat-style;
+        @include montserrat__style;
         font-size: 3rem;
         &__bold {
           font-weight: 700;
@@ -38,5 +38,5 @@
   }
 }
 .rotate {
-  @include rotate-vector;
+  @include rotate__vector;
 }

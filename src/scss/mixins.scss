@@ -4,23 +4,23 @@
 @mixin montserrat {
   font-family: "Monserrat", sans-serif;
 }
-@mixin two-column-grid($first, $second, $gap) {
+@mixin two__column__grid($first, $second, $gap) {
   display: grid;
   grid-template-columns: $first $second;
   column-gap: $gap;
   align-items: center;
   justify-content: center;
 }
-@mixin rotate-vector {
+@mixin rotate__vector {
   transform: scaleX(-1);
   -webkit-transform: scaleX(-1);
 }
 
-@mixin section-separation {
+@mixin section__separation {
   padding: 10vh 0 0 0;
 }
 
-@mixin montserrat-style {
+@mixin montserrat__style {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   letter-spacing: 0.02em;
@@ -34,8 +34,9 @@
 @mixin mobile__padding {
   padding: 0 3rem;
 }
-@mixin unfilled-button {
+@mixin unfilled__button {
   position: relative;
+  display: inline-block;
   background-color: transparent;
   border: solid 1px;
   border-color: $lightblue;
@@ -44,4 +45,30 @@
   font-size: 0.9rem;
   letter-spacing: 0.02em;
   z-index: 0;
+  transition: all 0.3s;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+@mixin button__arrow {
+  position: absolute;
+  left: 130%;
+  top: 0;
+  height: 100%;
+  transition: all 0.3s;
+  font-size: 0.9rem;
+  background-color: $lightblue;
+  width: 20%;
+  border-radius: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+@mixin button__after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  transition: all 0.3s;
 }

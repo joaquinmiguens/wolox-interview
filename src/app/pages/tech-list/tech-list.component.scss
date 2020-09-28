@@ -3,8 +3,8 @@
 
 .techList__container {
   @include container;
-  @include montserrat-style;
-  @include section-separation;
+  @include montserrat__style;
+  @include section__separation;
   &__heading {
     display: flex;
     flex-direction: column;
