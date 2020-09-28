@@ -1,22 +1,28 @@
 <div class="item">
   <div class="item__content">
-    <div class="item__content__left">
-      <!-- Type -->
-      <span class="type">{{ candidate.type }}</span>
-      <!-- Name -->
+    <div class="item__content__image">
+      <img src="{{ candidate.logo }}" alt="imagen!" />
+    </div>
+    <div class="item__content__main">
+      <div class="highRow">
+        <span class="highRow__text">{{ candidate.tech }} </span>
+        <label class="highRow__chip">Tech</label>
+      </div>
       <span class="name">{{ candidate.author }}</span>
-      <!-- Row of tech -->
-      <div class="details">
-        <ul>
-          <li class="techRow__item">{{ candidate.tech }}</li>
-          <li class="techRow__item">{{ candidate.language }}</li>
-          <li class="techRow__item">{{ candidate.year }}</li>
-          <li class="techRow__item">{{ candidate.license }}</li>
-        </ul>
+      <div class="lowRow">
+        <p class="lowRow__item">
+          {{ candidate.type }} • {{ candidate.language }} •
+          {{ candidate.year }} • {{ candidate.license }}
+        </p>
       </div>
     </div>
-    <div class="item__content__right">
-      <img src="{{ candidate.logo }}" alt="imagen!" />
+    <div class="item__content__link">
+      <a class="icon">
+        <fa-icon class="icon__bookMark" [icon]="bookMarkIcon"></fa-icon>
+      </a>
+      <a class="icon">
+        <fa-icon class="icon__bookMark" [icon]="linkIcon"></fa-icon>
+      </a>
     </div>
   </div>
 </div>

@@ -1,50 +1,95 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins.scss";
 .item {
-  border-top-color: transparent;
-  padding: 16px;
-  border: 1px solid #e1e4e8;
-  margin-top: 40px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px -6px rgba(0, 0, 0, 0.1),
+    10px 0px 10px -6px rgba(0, 0, 0, 0.1),
+    -10px 0px 10px -6px rgba(0, 0, 0, 0.1);
+  @include montserrat-style;
+  width: 85%;
+  margin: auto;
+  margin-top: 20px;
+  padding: 10px;
+  &:hover {
+    transform: scale(1.05);
+  }
+  @media screen and (max-width: 900px) {
+    width: 100%;
+  }
   &__content {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 40px;
-    &__left {
+    justify-content: space-around;
+    padding: 0 1.2rem;
+    &__image {
+      flex-basis: 10%;
       display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      text-align: left;
-      .type {
-        color: #586069;
-      }
-      .name {
-        font-size: 2rem;
-        font-weight: 600;
-        line-height: 1.25;
-        margin: 10px 0;
-      }
-      .details {
-        ul {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          color: #586069;
-          li {
-            padding-right: 2rem;
-          }
+      justify-content: center;
+      img {
+        height: 80px;
+        width: 113px;
+        object-fit: contain;
+        background: transparent;
+        @media screen and (max-width: 500px) {
+          height: 50px;
+          width: 71px;
+        }
+        @media screen and (max-width: 360px) {
+          height: 40px;
+          width: 56px;
         }
       }
     }
-    &__right {
-      width: 90px;
-      height: 90px;
+    &__main {
+      flex-basis: 70%;
+      margin-left: 3.75rem;
       display: flex;
-      align-items: center;
-      text-align: center;
+      flex-direction: column;
+      .highRow {
+        font-size: 1.2rem;
+        letter-spacing: 0.02em;
+        &__text {
+          color: $green;
+        }
+        &__chip {
+          background-color: $lightblue;
+          opacity: 0.6;
+          color: white;
+          padding: 5px 7.5px;
+          border-radius: 50px;
+          text-transform: uppercase;
+          margin-left: 5px;
+        }
+      }
+      .name {
+        margin: 0.5rem 0;
+        font-size: 2rem;
+      }
+      .lowRow {
+        &__item {
+          font-size: 1.2rem;
+          letter-spacing: 0.02em;
+          color: #c1c1c1;
+        }
+      }
+    }
+    &__link {
+      flex-basis: 20%;
+      color: black;
+      display: flex;
+      flex-direction: row;
       justify-content: center;
-      img {
-        width: auto;
-        object-fit: contain;
+      @media screen and (max-width: 500px) {
+        display: none;
+      }
+      .icon {
+        margin-left: 20px;
+        &__bookMark {
+          color: black;
+          font-size: 1.5rem;
+        }
       }
     }
   }
