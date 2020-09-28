@@ -3,10 +3,10 @@
   <div class="techList__container">
     <div class="techList__container__heading">
       <!-- Title -->
-      <span class="title"> Nuestros <span class="green">Devs</span> </span>
+      <span class="title"> Nuestros <span class="green">Proyectos</span> </span>
       <!-- subtitle -->
       <span class="subtitle"
-        >Postulantes de tecnologias Front-End, Back-End y Mobile</span
+        >Desarrollos en tecnologias Front-End, Back-End y Mobile</span
       >
     </div>
     <div class="techList__container__content">
@@ -23,13 +23,23 @@
             />
           </div>
           <div class="nameFilter">
-            <span>Filter</span>
+            <span *ngIf="mobile">Ordenado:</span>
+            <span>
+              {{ order.text }}
+              <fa-icon
+                class="chevron"
+                [icon]="order.icon"
+                (click)="toggleOrder()"
+              ></fa-icon
+            ></span>
           </div>
         </div>
         <div class="list">
           <!-- Candidate -->
           <app-list-item
-            *ngFor="let candidate of candidates | searchPipe: searchText"
+            *ngFor="
+              let candidate of candidates | searchPipe: searchText:order.text
+            "
             [candidate]="candidate"
           ></app-list-item>
         </div>
