@@ -9,6 +9,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class AuthService {
   private isLogged: BehaviorSubject<boolean>;
   public logged: Observable<boolean>;
+  public postUrl: string =
+    'http://private-8e8921-woloxfrontendinverview.apiary-mock.com/login';
   constructor(private http: HttpClient) {
     this.isLogged = new BehaviorSubject<boolean>(false);
     this.logged = this.isLogged.asObservable();
@@ -20,20 +22,13 @@ export class AuthService {
     let body = {};
     body['email'] = email;
     body['password'] = password;
-    console.log(email, password);
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http
-      .post<object>(
-        'http://private-8e8921-woloxfrontendinverview.apiary-mock.com/login',
-        body,
-        { headers }
-      )
+      .post<object>(this.postUrl, body, { headers })
       .pipe(
         map((response: Observable<object>) => {
-          console.log(response);
           if (response) {
             this.update(true);
-            console.log(this.isLogged.value);
           }
           return response;
         })
@@ -41,13 +36,12 @@ export class AuthService {
   }
   isLoggedIn(): boolean {
     const token = JSON.parse(localStorage.getItem('userToken'));
-    console.log(token);
     if (token === null || token === '') {
       localStorage.setItem('userToken', JSON.stringify(''));
-      this.isLogged.next(false);
+      this.update(false);
       return false;
     } else {
-      this.isLogged.next(true);
+      this.update(true);
       return true;
     }
   }

@@ -27,7 +27,6 @@ export class CountPipe implements PipeTransform {
       array.map(($candidate: Candidate) => {
         techArray.push($candidate.tech);
       });
-      console.log(techArray);
       return techArray;
     }
   }
