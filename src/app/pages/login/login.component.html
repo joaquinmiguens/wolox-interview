@@ -5,14 +5,40 @@
   />
   <div class="login__container">
     <div class="login__container__vector" *ngIf="isImage">
-      <img src="../../../assets/dev.svg" />
+      <img
+        src="../../../assets/dev.svg"
+        data-aos="fade-right"
+        data-aos-once="true"
+        data-aos-duration="800"
+        data-aos-offset="100"
+      />
     </div>
     <div class="login__container__form">
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-        <img class="avatar" src="../../../assets/avatar.svg" alt="" />
-        <span class="title">Login</span>
+        <img
+          class="avatar"
+          src="../../../assets/avatar.svg"
+          alt=""
+          data-aos="fade-left"
+          data-aos-once="true"
+          data-aos-duration="800"
+          data-aos-offset="100"
+        />
+        <span
+          class="title"
+          data-aos="fade-left"
+          data-aos-once="true"
+          data-aos-duration="800"
+          data-aos-offset="100"
+          >Login</span
+        >
         <div class="input">
           <div
+            data-aos="fade-up"
+            data-aos-once="true"
+            data-aos-duration="800"
+            data-aos-delay="700"
+            data-aos-offset="100"
             [ngClass]="{
               input__content: true,
               focus: input.focus ? true : false
@@ -39,7 +65,14 @@
               
             </span> -->
           </div>
-          <div class="input__checkbox">
+          <div
+            class="input__checkbox"
+            data-aos="fade-up"
+            data-aos-once="true"
+            data-aos-duration="800"
+            data-aos-delay="900"
+            data-aos-offset="100"
+          >
             <label class="container">
               <span>Mantener mi sesion iniciada</span>
               <input
@@ -54,6 +87,10 @@
             type="submit"
             class="input__button"
             [disabled]="loginForm.invalid"
+            data-aos="fade-up"
+            data-aos-once="true"
+            data-aos-duration="800"
+            data-aos-delay="1200"
           >
             <a class="input__button__link">Login</a>
           </button>

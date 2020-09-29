@@ -3,9 +3,24 @@
   <div class="techList__container">
     <div class="techList__container__heading">
       <!-- Title -->
-      <span class="title"> Nuestros <span class="green">Proyectos</span> </span>
+      <span
+        class="title"
+        data-aos="fade-right"
+        data-aos-once="true"
+        data-aos-duration="1000"
+        data-aos-offset="100"
+      >
+        Nuestros
+        <span class="green">Proyectos</span>
+      </span>
       <!-- subtitle -->
-      <span class="subtitle"
+      <span
+        class="subtitle"
+        data-aos="fade-right"
+        data-aos-once="true"
+        data-aos-duration="1000"
+        data-aos-delay="500"
+        data-aos-offset="100"
         >Desarrollos en tecnologias Front-End, Back-End y Mobile</span
       >
     </div>
@@ -34,13 +49,24 @@
             ></span>
           </div>
         </div>
-        <div class="list">
+        <div
+          class="list"
+          data-aos="fade-up"
+          data-aos-once="true"
+          data-aos-duration="400"
+          data-aos-delay="1000"
+          data-aos-offset="100"
+        >
           <!-- Candidate -->
           <app-list-item
             *ngFor="
               let candidate of candidates | searchPipe: searchText:order.text
             "
             [candidate]="candidate"
+            data-aos="fade-up"
+            data-aos-duration="400"
+            data-aos-delay="200"
+            data-aos-offset="100"
           ></app-list-item>
         </div>
         <div class="count">

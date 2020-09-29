@@ -133,6 +133,7 @@
 
 .benefits {
   @include section__separation;
+  min-height: 50vh;
   &__container {
     @include container;
     @media screen and (max-width: 1024px) {
@@ -203,6 +204,7 @@
 
 .requiriments {
   @include section__separation;
+  min-height: 50vh;
   &__container {
     @include container;
     @include two__column__grid(45%, 55%, 0rem);

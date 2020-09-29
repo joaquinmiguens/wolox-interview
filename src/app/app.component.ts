@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,7 @@ export class AppComponent implements OnInit {
   showFooter: boolean = false;
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
   ngOnInit() {
+    AOS.init();
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.showFooter =
