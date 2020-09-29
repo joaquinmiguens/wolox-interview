@@ -43,6 +43,16 @@
             [candidate]="candidate"
           ></app-list-item>
         </div>
+        <div class="count">
+          <ul class="count__list">
+            <li
+              class="count__list__item"
+              *ngFor="let candidate of candidates | countPipe: searchText"
+            >
+              {{ candidate }}
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
