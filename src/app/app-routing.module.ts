@@ -18,6 +18,7 @@ const routes: Routes = [
     canActivate: [GuestGuard],
     loadChildren: () =>
       import('./pages/login/login.module').then((m) => m.LoginModule),
+    data: { showFooter: false },
   },
   {
     path: 'home',
@@ -32,7 +33,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes, {
       scrollPositionRestoration: 'enabled',
       anchorScrolling: 'enabled',
-      scrollOffset: [0, 70],
+      scrollOffset: [0, 300],
       preloadingStrategy: PreloadAllModules,
     }),
   ],
