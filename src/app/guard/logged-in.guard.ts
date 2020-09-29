@@ -1,9 +1,6 @@
 import { Injectable } from '@angular/core';
 import {
   CanActivate,
-  CanLoad,
-  Route,
-  UrlSegment,
   ActivatedRouteSnapshot,
   RouterStateSnapshot,
   UrlTree,
@@ -16,7 +13,7 @@ import { AuthService } from '../service/auth.service';
 @Injectable({
   providedIn: 'root',
 })
-export class LoggedInGuard implements CanActivate, CanLoad {
+export class LoggedInGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) {}
   canActivate(
     next: ActivatedRouteSnapshot,
@@ -32,24 +29,6 @@ export class LoggedInGuard implements CanActivate, CanLoad {
         if (!$logged) {
           console.log('login');
 
-          this.router.navigate(['/login']);
-          return false;
-        } else {
-          console.log('tech-list');
-          return true;
-        }
-      })
-    );
-  }
-  canLoad(
-    route: Route,
-    segments: UrlSegment[]
-  ): Observable<boolean> | Promise<boolean> | boolean {
-    return this.authService.logged.pipe(
-      map(($logged) => {
-        console.log($logged);
-        if (!$logged) {
-          console.log('login');
           this.router.navigate(['/login']);
           return false;
         } else {
