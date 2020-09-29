@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { GuestGuard } from './guard/guest.guard';
 import { LoggedInGuard } from './guard/logged-in.guard';
 import { AuthService } from './service/auth.service';
@@ -28,7 +28,14 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, {
+      scrollPositionRestoration: 'enabled',
+      anchorScrolling: 'enabled',
+      scrollOffset: [0, 70],
+      preloadingStrategy: PreloadAllModules,
+    }),
+  ],
   providers: [AuthService],
   exports: [RouterModule],
 })
