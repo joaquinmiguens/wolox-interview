@@ -28,6 +28,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 7rem;
+  position: relative;
   @include montserrat__style;
   @media screen and (max-width: 1200px) {
     column-gap: 5rem;
@@ -40,6 +41,8 @@
     position: absolute;
     justify-self: center;
     bottom: 20px;
+    width: 10rem;
+    object-fit: contain;
   }
   &__vector {
     display: flex;
@@ -75,6 +78,9 @@
       .avatar {
         width: 100px;
         object-fit: contain;
+        @media screen and (max-width: 400px) {
+          width: 80px;
+        }
       }
       .title {
         font-size: 3rem;
@@ -93,6 +99,9 @@
           border-bottom: 2px solid #cccccc;
           margin-bottom: 20px;
           font-size: 1.2rem;
+          @media screen and (max-width: 400px) {
+            margin: 15px 0;
+          }
           .error {
             transform: translateY(35px);
             font-size: 1rem;
@@ -165,11 +174,11 @@
           align-items: center;
           vertical-align: center;
           .container {
-            display: block;
+            display: flex;
+            height: 24px;
             position: relative;
             padding-left: 3rem;
-            margin-top: 30px;
-            margin-bottom: 30px;
+            margin: 30px 0;
             cursor: pointer;
             font-size: 1rem;
             -webkit-user-select: none;
@@ -177,6 +186,15 @@
             -ms-user-select: none;
             user-select: none;
             clear: both;
+            @media screen and (max-width: 400px) {
+              margin: 20px 0;
+            }
+            @media screen and (max-width: 360px) {
+              margin: 15px 0;
+            }
+            span {
+              align-self: center;
+            }
             &:hover {
               &__checkmark {
                 background-color: rgb(170, 154, 154);
@@ -257,7 +275,7 @@
           border: solid 1px;
           border-color: $lightblue;
           border-radius: 50px;
-          padding: 15px 60px !important;
+          padding: 1rem 4rem !important;
           letter-spacing: 0.02em;
           z-index: 0;
           cursor: pointer;
