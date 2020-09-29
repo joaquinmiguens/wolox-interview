@@ -96,10 +96,12 @@ export class HeaderComponent implements OnInit {
     });
   }
   toggleMenu() {
-    if (this.isMenuOpen) {
-      this.isMenuOpen = false;
-    } else {
-      this.isMenuOpen = true;
+    if (this.mobile) {
+      if (this.isMenuOpen) {
+        this.isMenuOpen = false;
+      } else {
+        this.isMenuOpen = true;
+      }
     }
   }
 
