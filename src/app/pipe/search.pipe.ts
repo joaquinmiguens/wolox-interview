@@ -30,26 +30,14 @@ export class SearchPipe implements PipeTransform {
 
   sorting(items: Candidate[], order: string) {
     if (order === 'Ascendente') {
-      const sortingArray = items.sort((first: Candidate, second: Candidate) => {
-        if (first.author < second.author) {
-          return -1;
-        }
-        if (first.author > second.author) {
-          return 1;
-        }
-        return 0;
-      });
+      const sortingArray = items.sort((first: Candidate, second: Candidate) =>
+        first.author < second.author ? -1 : first.author > second.author ? 1 : 0
+      );
       return sortingArray;
     } else {
-      const sortingArray = items.sort((first: Candidate, second: Candidate) => {
-        if (first.author > second.author) {
-          return -1;
-        }
-        if (first.author < second.author) {
-          return 1;
-        }
-        return 0;
-      });
+      const sortingArray = items.sort((first: Candidate, second: Candidate) =>
+        first.author > second.author ? -1 : first.author < second.author ? 1 : 0
+      );
       return sortingArray;
     }
   }
