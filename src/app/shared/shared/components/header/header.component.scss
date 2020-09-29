@@ -14,8 +14,23 @@
     background: white;
   }
   @media screen and (max-width: 900px) {
-    padding-top: 25px !important    ;
+    padding: 25px 0px !important;
   }
+  @media screen and (max-width: 400px) {
+    padding: 20px 0px !important;
+  }
+}
+
+.shadow {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  display: block;
+  transition: all 0.35s ease-in-out;
 }
 
 .header {
