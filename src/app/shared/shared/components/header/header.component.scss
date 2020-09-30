@@ -147,6 +147,7 @@
       }
       &__link {
         color: #121212;
+        transition: all 0.18s;
         &:hover {
           font-weight: 700;
         }

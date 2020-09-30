@@ -26,12 +26,18 @@ li {
 
 .active {
   font-weight: 700;
+  font-size: 1.25rem;
+  transition: all 0.18s;
 }
 .footer {
   @include section__separation;
 }
+section {
+  overflow-x: hidden;
+}
 html {
   font-size: 16px;
+  scroll-behavior: smooth;
   @media screen and (max-width: 960px) {
     font-size: 14px;
   }
