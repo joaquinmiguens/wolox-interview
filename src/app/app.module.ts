@@ -18,9 +18,9 @@ import { AppService } from './app.service';
 import { HttpClientModule } from '@angular/common/http';
 import { TechListService } from './service/tech-list.service';
 
-export function appInit(appService: AppService) {
+const appInit = (appService: AppService) => {
   return () => appService.initializeApp();
-}
+};
 
 @NgModule({
   declarations: [AppComponent],

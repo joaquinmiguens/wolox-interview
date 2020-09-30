@@ -14,7 +14,10 @@ import { AuthService } from '../service/auth.service';
   providedIn: 'root',
 })
 export class LoggedInGuard implements CanActivate {
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private readonly authService: AuthService,
+    private readonly router: Router
+  ) {}
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
@@ -25,14 +28,10 @@ export class LoggedInGuard implements CanActivate {
     | UrlTree {
     return this.authService.logged.pipe(
       map(($logged) => {
-        console.log($logged);
         if (!$logged) {
-          console.log('login');
-
           this.router.navigate(['/login']);
           return false;
         } else {
-          console.log('tech-list');
           return true;
         }
       })

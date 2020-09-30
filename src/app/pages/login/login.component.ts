@@ -52,9 +52,9 @@ export class LoginComponent implements OnInit, OnDestroy {
   public loginForm: FormGroup;
   public subscription: Subscription;
   constructor(
-    private formBuilder: FormBuilder,
+    private readonly formBuilder: FormBuilder,
     public authService: AuthService,
-    private router: Router
+    private readonly router: Router
   ) {
     this.width = window.screen.width;
     if (this.width <= 900) {
@@ -118,8 +118,9 @@ export class LoginComponent implements OnInit, OnDestroy {
       }
     });
   }
-  onKey(event: any, id: string) {
+  onKey(event, id: string) {
     const inputValue = event.target.value;
+    console.log(typeof inputValue, inputValue);
     this.inputs.map(($input: Input) => {
       if ($input.id === id) {
         $input.value = inputValue;

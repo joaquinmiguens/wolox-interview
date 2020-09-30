@@ -13,7 +13,7 @@ import { faTwitter } from '@fortawesome/free-brands-svg-icons';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   public twitterIcon: IconDefinition = faTwitter;
   public arrowIcon: IconDefinition = faArrowRight;
   public assets: string;
@@ -84,8 +84,6 @@ export class HomeComponent implements OnInit {
       },
     ];
   }
-
-  ngOnInit(): void {}
 
   navigateToTwitter() {
     window.location.href = 'https://twitter.com/Wolox';
