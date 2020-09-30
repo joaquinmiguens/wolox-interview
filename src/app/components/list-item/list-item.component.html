@@ -1,14 +1,16 @@
 <div class="item">
   <div class="item__content">
     <div class="item__content__image">
-      <img src="{{ candidate.logo }}" alt="imagen!" />
+      <img src="{{ candidate.logo }}" alt="Logo de {{ candidate.tech }} " />
     </div>
     <div class="item__content__main">
       <div class="highRow">
-        <span class="highRow__text">{{ candidate.tech }} </span>
-        <label class="highRow__chip">Tech</label>
+        <span class="highRow__text" id="{{ candidate.author }}"
+          >{{ candidate.tech }}
+        </span>
+        <label class="highRow__chip" for="{{ candidate.author }}">Tech</label>
       </div>
-      <span class="name">{{ candidate.author }}</span>
+      <h5 class="name">{{ candidate.author }}</h5>
       <div class="lowRow">
         <p class="lowRow__item">
           {{ candidate.type }} • {{ candidate.language }} •
