@@ -9,11 +9,8 @@ import {
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss'],
 })
-export class FooterComponent implements OnInit {
+export class FooterComponent {
   public arrowIcon: IconDefinition = faArrowRight;
-  constructor() {}
-
-  ngOnInit(): void {}
   navigateToWolox() {
     window.location.href = 'https://www.wolox.com.ar/';
   }

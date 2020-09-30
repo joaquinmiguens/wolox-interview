@@ -11,11 +11,8 @@ import { faBookmark } from '@fortawesome/free-regular-svg-icons';
   templateUrl: './list-item.component.html',
   styleUrls: ['./list-item.component.scss'],
 })
-export class ListItemComponent implements OnInit {
+export class ListItemComponent {
   @Input() candidate: Candidate;
   public bookMarkIcon: IconDefinition = faBookmark;
   public linkIcon: IconDefinition = faExternalLinkAlt;
-  constructor() {}
-
-  ngOnInit(): void {}
 }

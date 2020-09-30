@@ -30,7 +30,7 @@ export class TechListComponent implements OnInit, OnDestroy {
   public searchText: string;
   public order: Order;
   public mobile: boolean;
-  constructor(private techList: TechListService) {
+  constructor(private readonly techList: TechListService) {
     this.searchText = '';
     this.order = {
       text: 'Ascendente',

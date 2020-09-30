@@ -32,7 +32,7 @@ export class CountPipe implements PipeTransform {
   }
 }
 
-export function merge(items: Candidate[], searchText: string, order: string) {
+const merge = (items: Candidate[], searchText: string, order: string) => {
   if (!items) {
     return [];
   }
@@ -49,9 +49,9 @@ export function merge(items: Candidate[], searchText: string, order: string) {
   let newArray = authorArray.concat(typeArray);
   newArray = [...new Set([...authorArray, ...typeArray])];
   return sorting(newArray, order);
-}
+};
 
-export function sorting(items: Candidate[], order: string) {
+const sorting = (items: Candidate[], order: string) => {
   if (order === 'Ascendente') {
     const sortingArray = items.sort((first: Candidate, second: Candidate) =>
       first.author < second.author ? -1 : first.author > second.author ? 1 : 0
@@ -63,4 +63,4 @@ export function sorting(items: Candidate[], order: string) {
     );
     return sortingArray;
   }
-}
+};

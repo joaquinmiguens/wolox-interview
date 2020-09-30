@@ -21,7 +21,6 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit, OnDestroy {
-  private isToken: boolean;
   public isSticky: boolean;
   public mobile: boolean;
   public isMenuOpen: boolean;
@@ -37,7 +36,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
       active: false,
     },
   ];
-  constructor(private authService: AuthService, @Inject(DOCUMENT) document) {
+  constructor(
+    private readonly authService: AuthService,
+    @Inject(DOCUMENT) document
+  ) {
     this.mobile = false;
     this.isMenuOpen = false;
     this.tabs = [

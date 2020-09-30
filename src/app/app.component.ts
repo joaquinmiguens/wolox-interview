@@ -9,8 +9,11 @@ import * as AOS from 'aos';
 })
 export class AppComponent implements OnInit {
   title = 'wolox-interview';
-  showFooter: boolean = false;
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+  showFooter = false;
+  constructor(
+    private readonly router: Router,
+    private readonly activatedRoute: ActivatedRoute
+  ) {}
   ngOnInit() {
     AOS.init();
     this.router.events.subscribe((event) => {
