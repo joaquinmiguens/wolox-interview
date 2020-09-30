@@ -18,6 +18,9 @@ li {
 
 .lightblue {
   color: $lightblue;
+  &.brigth {
+    color: $bright__lightblue;
+  }
 }
 
 .green {
@@ -26,18 +29,20 @@ li {
 
 .active {
   font-weight: 700;
-  font-size: 1.25rem;
-  transition: all 0.18s;
 }
-.footer {
+footer {
   @include section__separation;
 }
 section {
   overflow-x: hidden;
 }
+button {
+  @include montserrat__style;
+}
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  @include montserrat__style;
   @media screen and (max-width: 960px) {
     font-size: 14px;
   }

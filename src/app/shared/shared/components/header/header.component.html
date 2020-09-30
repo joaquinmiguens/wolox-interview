@@ -6,11 +6,16 @@
     fill: isMenuOpen ? true : false
   }"
   (scroll)="onScroll($event)"
+  role="banner"
 >
-  <div class="header">
+  <div class="header" tabindex="0" aria-controls="menu">
     <!-- Logo -->
     <a class="header__logo" [routerLink]="['/home']">
-      <img src="../../../assets/logo_full_color.svg" alt="Wolox Logo" />
+      <img
+        id="wolox__logo"
+        src="../../../assets/logo_full_color.svg"
+        alt="Wolox Logo"
+      />
     </a>
 
     <!-- Menu -->
@@ -24,18 +29,22 @@
       <span class="mobile__bar"></span>
     </div>
     <ul
+      id="menu"
       [ngClass]="{
         header__menu__list: true,
         open: isMenuOpen ? true : false
       }"
+      role="menubar"
     >
       <li
+        role="none"
         class="item"
         *ngFor="let tab of tabs"
         id="{{ tab.id }}"
         (click)="toggleMenu()"
       >
         <a
+          role="menuitem"
           [ngClass]="{ item__link: true, active: tab.active ? true : false }"
           routerLink="{{ tab.routerLink }}"
           fragment="{{ tab.fragment }}"
@@ -43,8 +52,14 @@
           (click)="activeTab(tab.id)"
           >{{ tab.text }}</a
         >
-        <div class="item__button" *ngIf="tab.button" (click)="toggleMenu()">
+        <button
+          class="item__button"
+          routerLink="{{ tab.routerLink }}"
+          *ngIf="tab.button"
+          (click)="toggleMenu()"
+        >
           <a
+            tabindex="-1"
             class="item__button__link"
             routerLink="{{ tab.routerLink }}"
             fragment="{{ tab.fragment }}"
@@ -54,7 +69,7 @@
           <div class="item__button__arrow">
             <fa-icon class="icon" [icon]="arrowIcon"></fa-icon>
           </div>
-        </div>
+        </button>
       </li>
     </ul>
   </div>

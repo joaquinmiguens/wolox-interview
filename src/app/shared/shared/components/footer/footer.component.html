@@ -1,20 +1,17 @@
-<div class="footerr">
-  <div class="footerr__container">
-    <div class="footerr__container__content">
+<section class="footer" role="contentinfo" aria-label="Final de la pagina">
+  <div class="footer__container" tabindex="0">
+    <div class="footer__container__content">
       <div class="heading">
-        <span class="heading__title"
-          >Gracias por
-          <span class="lightblue">completar el ejercicio</span></span
-        >
-        <span class="heading__subtitle"
-          >Te invitamos a ver mas informacion</span
-        >
-        <div class="heading__button" (click)="navigateToWolox()">
+        <h3 class="heading__title">
+          Gracias por <span class="lightblue">completar el ejercicio</span>
+        </h3>
+        <h4 class="heading__subtitle">Te invitamos a ver mas informacion</h4>
+        <button class="heading__button" (click)="navigateToWolox()">
           <a class="heading__button__link">Conocer mas</a>
           <div class="heading__button__arrow">
             <fa-icon class="icon" [icon]="arrowIcon"></fa-icon>
           </div>
-        </div>
+        </button>
       </div>
 
       <div>
@@ -22,4 +19,4 @@
       </div>
     </div>
   </div>
-</div>
+</section>

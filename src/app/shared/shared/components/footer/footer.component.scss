@@ -1,7 +1,7 @@
 @import "../../../../../scss/mixins.scss";
 @import "../../../../../scss/variables.scss";
 
-.footerr {
+.footer {
   position: relative;
   background: url("../../../../../assets/Backgrounds/Bg_Footer.png") no-repeat
     bottom center/cover;
@@ -20,25 +20,32 @@
       margin: auto;
       max-width: 860px;
       padding: 2rem 0;
-      @include montserrat__style;
+
       .heading {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin-bottom: 40px;
         &__title {
-          font-size: 2.5rem;
+          font-size: 3rem;
           line-height: 1.5;
           font-weight: 600;
           margin-bottom: 20px;
+          @media screen and (max-width: 400px) {
+            font-size: 2.5rem;
+          }
         }
         &__subtitle {
-          font-size: 2rem;
+          @include section__title;
+          @media screen and (max-width: 400px) {
+            font-size: 1.5rem;
+          }
         }
         &__button {
           position: relative;
           display: inline-block;
           background-color: $lightblue;
+          border-color: transparent;
           border-radius: 50px;
           padding: 15px 60px !important;
           letter-spacing: 0.02em;

@@ -13,7 +13,7 @@
   &__container {
     @include container;
     @include two__column__grid(50%, 50%, 0rem);
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 1200px) {
       @include mobile__padding;
     }
     @media screen and (max-width: 960px) {
@@ -31,7 +31,7 @@
         margin-right: 0;
       }
       .title {
-        @include montserrat__style;
+        @include section__title;
       }
     }
     &__image {
@@ -68,13 +68,11 @@
         margin: auto;
         padding: 6rem 2rem;
         &__title {
-          @include montserrat__style;
           font-size: 3.8rem;
           font-weight: 700;
           margin-bottom: 40px;
         }
         &__media {
-          @include montserrat__style;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -102,7 +100,6 @@
               @include button__after;
             }
             &__link {
-              @include montserrat__style;
               font-size: 1.25rem;
               color: white;
             }
@@ -123,9 +120,8 @@
       text-align: center;
       padding: 3rem;
       .title {
-        @include montserrat__style;
+        @include section__title;
         font-size: 3rem;
-        font-weight: 500;
       }
     }
   }
@@ -143,10 +139,9 @@
       grid-template-columns: 1fr;
     }
     &__content {
-      @include montserrat__style;
       text-align: center;
       .title {
-        font-size: 2rem;
+        @include section__title;
         letter-spacing: 0.02em;
       }
       .list {
@@ -215,20 +210,21 @@
       grid-template-columns: 1fr;
     }
     .content {
-      @include montserrat__style;
       padding: 0 70px;
-      font-size: 1.5rem;
+
       @media screen and (max-width: 960px) {
         text-align: center;
-        font-size: 1.5rem;
         margin-bottom: 50px;
+      }
+      &__title {
+        @include section__title;
+        font-weight: 600;
       }
     }
     .list {
       display: flex;
       align-items: center;
       &__items {
-        @include montserrat__style;
         font-size: 1.2rem;
         &__item {
           display: flex;

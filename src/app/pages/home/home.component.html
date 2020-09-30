@@ -1,14 +1,18 @@
 <div class="home">
   <!-- Hero -->
-  <section class="hero" id="hero">
+  <section class="hero" id="hero" aria-label="Seccion principal">
     <app-showcase></app-showcase>
   </section>
   <!-- Technologies -->
-  <section class="technologies" id="technologies">
+  <section
+    class="technologies"
+    id="technologies"
+    aria-label="Sección de tecnologias"
+  >
     <!-- Title -->
-    <div class="technologies__container">
+    <div class="technologies__container" tabindex="0">
       <div class="technologies__container__content">
-        <h2
+        <h4
           class="title"
           data-aos="fade-right"
           data-aos-once="true"
@@ -17,7 +21,7 @@
         >
           Estamos buscando para incorporar gente increible para estas
           tecnologias:
-        </h2>
+        </h4>
       </div>
       <!-- Illustration -->
       <img
@@ -26,14 +30,14 @@
         data-aos-duration="1000"
         data-aos-offset="100"
         src="../../../assets/Ic_Tecnologys.svg"
-        alt="Hero Image"
+        alt="Angular, React, Node, Vue.js, Java, Rails, IOS, React Native, Net Core, Android"
         class="technologies__container__image"
       />
     </div>
   </section>
   <!-- Woloxer -->
-  <section class="woloxer" id="woloxer">
-    <div class="woloxer__container">
+  <section class="woloxer" id="woloxer" aria-label="Sección de Woloxers">
+    <div class="woloxer__container" tabindex="0">
       <div
         class="woloxer__container__image"
         data-aos="fade-right"
@@ -43,22 +47,25 @@
       >
         <div class="content">
           <div class="content__title">
-            <span
+            <h4
               class="green"
               data-aos="fade-up"
               data-aos-once="true"
               data-aos-duration="600"
               data-aos-delay="900"
-              >350 +</span
-            ><span
-              class="lightblue"
-              data-aos="fade-up"
-              data-aos-once="true"
-              data-aos-duration="600"
-              data-aos-delay="1200"
+              aria-label="Wolox es una familia de mas de trescientos cincuenta personas."
             >
-              Woloxers</span
-            >
+              350 +
+              <span
+                class="lightblue brigth"
+                data-aos="fade-up"
+                data-aos-once="true"
+                data-aos-duration="600"
+                data-aos-delay="1200"
+              >
+                Woloxers
+              </span>
+            </h4>
           </div>
           <div class="content__media">
             <div class="twitter">
@@ -69,16 +76,19 @@
                 data-aos-once="true"
                 data-aos-duration="400"
                 data-aos-delay="1600"
+                aria-hidden="true"
               ></fa-icon>
-              <span
+              <h5
+                aria-label="Seguinos en Twitter en @Wolox."
                 data-aos="fade-up"
                 data-aos-once="true"
                 data-aos-duration="400"
                 data-aos-delay="1600"
-                >@Wolox</span
               >
+                @Wolox
+              </h5>
             </div>
-            <div
+            <button
               class="button"
               data-aos="fade-bottom"
               data-aos-once="true"
@@ -87,6 +97,7 @@
               (click)="navigateToTwitter()"
             >
               <a
+                tabindex="-1"
                 class="button__link"
                 data-aos="fade-bottom"
                 data-aos-once="true"
@@ -97,7 +108,7 @@
               <div class="button__arrow">
                 <fa-icon class="icon" [icon]="arrowIcon"></fa-icon>
               </div>
-            </div>
+            </button>
           </div>
         </div>
       </div>
@@ -108,30 +119,32 @@
         data-aos-duration="1000"
         data-aos-offset="100"
       >
-        <span class="title">
+        <h4 class="title">
           Trabajamos para
           <strong class="lightblue">convertir</strong>
           <strong class="green"> ideas</strong>
           en productos.
-        </span>
+        </h4>
       </div>
     </div>
   </section>
   <!-- Benefits -->
-  <section class="benefits" id="benefits">
-    <div class="benefits__container">
+  <section class="benefits" id="benefits" aria-label="Sección de beneficios">
+    <div class="benefits__container" tabindex="0">
       <div class="benefits__container__content">
-        <span
+        <h4
           class="title"
           data-aos="fade-up"
           data-aos-once="true"
           data-aos-duration="600"
           data-aos-offset="100"
-          >Entre los beneficios que ofrecemos se encuentran
-          <span class="lightblue">;)</span></span
         >
+          Entre los beneficios que ofrecemos se encuentran
+          <span class="lightblue" aria-hidden="true">;)</span>
+        </h4>
         <div class="list">
           <div
+            role="tooltip"
             data-aos="fade-up"
             data-aos-once="true"
             data-aos-duration="400"
@@ -155,19 +168,24 @@
     </div>
   </section>
   <!-- Requeriments -->
-  <section class="requiriments" id="requiriments">
+  <section
+    class="requiriments"
+    id="requiriments"
+    aria-label="Sección de Requerimientos"
+  >
     <!-- Title -->
-    <div class="requiriments__container">
+    <div class="requiriments__container" tabindex="0">
       <div class="content">
-        <h2
+        <h4
           class="content__title"
           data-aos="fade-right"
           data-aos-once="true"
           data-aos-duration="1000"
           data-aos-offset="100"
+          aria-label="Nuestros requerimientos son"
         >
           Requerimientos
-        </h2>
+        </h4>
       </div>
       <!-- List -->
       <div class="list">

@@ -14,10 +14,12 @@
     background: white;
   }
   @media screen and (max-width: 900px) {
-    padding: 25px 0px !important;
+    padding-top: 25px !important;
+    padding-bottom: 25px !important;
   }
   @media screen and (max-width: 400px) {
-    padding: 20px 0px !important;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
   }
 }
 
@@ -43,7 +45,7 @@
   @include container;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1200px) {
     @include mobile__padding;
   }
   @media screen and (max-width: 900px) {
@@ -91,6 +93,10 @@
       object-fit: contain;
       @media screen and (max-width: 1280px) {
         max-width: 150px;
+      }
+      @media screen and (max-width: 900px) {
+        height: 29px;
+        display: flex;
       }
     }
   }
@@ -154,13 +160,8 @@
       }
       &__button {
         @include unfilled__button;
-        @media screen and (max-width: 1280px) {
-          padding-left: 40px !important;
-          padding-right: 40px !important;
-        }
         @media screen and (max-width: 900px) {
-          padding-left: 60px !important;
-          padding-right: 60px !important;
+          padding: 1rem 5rem !important;
           font-size: 1.5rem;
         }
         &:hover {
@@ -170,6 +171,7 @@
         }
         &__link {
           color: $lightblue;
+          font-weight: 600;
         }
         &:after {
           @include button__after;
