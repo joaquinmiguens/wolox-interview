@@ -91,6 +91,11 @@
         }
       }
       .input {
+        & > div {
+          @media screen and (max-width: 400px) {
+            margin-top: 10px !important;
+          }
+        }
         &__content {
           position: relative;
           display: grid;
@@ -98,15 +103,17 @@
           margin: 25px 0;
           padding: 5px 0;
           border-bottom: 2px solid #cccccc;
-          margin-bottom: 20px;
+          margin-bottom: 40px;
           font-size: 1.2rem;
           @media screen and (max-width: 400px) {
-            margin: 15px 0;
+            margin: 30px 0;
           }
           .error {
-            transform: translateY(35px);
-            font-size: 1rem;
+            position: absolute;
+            transform: translateY(60px);
+            font-size: 0.9rem;
             color: lightcoral;
+            text-align: left;
           }
           &::before {
             @include input__pseudo__class();
@@ -188,7 +195,8 @@
             user-select: none;
             clear: both;
             @media screen and (max-width: 400px) {
-              margin: 20px 0;
+              margin: 25px 0;
+              height: 18px;
             }
             @media screen and (max-width: 360px) {
               margin: 15px 0;
@@ -229,6 +237,12 @@
                     border-width: 0 2px 2px 0;
                     background-color: transparent;
                     border-radius: 0;
+                    @media screen and (max-width: 400px) {
+                      left: 5px;
+                      top: 1px;
+                      width: 4px;
+                      height: 8px;
+                    }
                   }
                 }
               }
@@ -247,6 +261,10 @@
               -ms-transition: all 0.3s ease-out;
               -o-transition: all 0.3s ease-out;
               border: 2px solid #cccccc;
+              @media screen and (max-width: 400px) {
+                height: 18px;
+                width: 18px;
+              }
               &::after {
                 position: absolute;
                 content: "";
@@ -266,6 +284,12 @@
                 -moz-transition: all 0.3s ease-out;
                 -ms-transition: all 0.3s ease-out;
                 -o-transition: all 0.3s ease-out;
+                @media screen and (max-width: 400px) {
+                  left: 5px;
+                  top: 1px;
+                  width: 4px;
+                  height: 8px;
+                }
               }
             }
           }
