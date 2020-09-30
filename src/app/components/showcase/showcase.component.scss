@@ -6,9 +6,11 @@
   &__container {
     @include container;
     @include two__column__grid(50%, 50%, 0rem);
+    @media screen and (max-width: 1200px) {
+      @include mobile__padding;
+    }
     @media screen and (max-width: 1024px) {
       grid-template-columns: 1fr;
-      @include mobile__padding;
     }
     &__content {
       /* font-size: 2rem; */
@@ -19,8 +21,7 @@
         max-width: 500px;
       }
       .title {
-        @include montserrat__style;
-        font-size: 3rem;
+        @include page__title;
         &__bold {
           font-weight: 700;
         }
