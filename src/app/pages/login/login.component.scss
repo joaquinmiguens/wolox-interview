@@ -29,7 +29,7 @@
   grid-template-columns: 1fr 1fr;
   column-gap: 7rem;
   position: relative;
-  @include montserrat__style;
+
   @media screen and (max-width: 1200px) {
     column-gap: 5rem;
     @include mobile__padding;
@@ -84,7 +84,7 @@
         }
       }
       .title {
-        font-size: 3rem;
+        @include page__title;
         margin: 15px 0;
         @media screen and (max-width: 1000px) {
           margin: 8px 0;
