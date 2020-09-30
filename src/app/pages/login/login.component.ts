@@ -22,6 +22,7 @@ export interface Input {
   id: string;
   focus: boolean;
   value: string;
+  errorMessage: string;
 }
 export interface Token {
   token: string;
@@ -44,6 +45,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       id: '',
       focus: false,
       value: '',
+      errorMessage: '',
     },
   ];
 
@@ -68,6 +70,7 @@ export class LoginComponent implements OnInit, OnDestroy {
         id: '010',
         focus: false,
         value: '',
+        errorMessage: 'Ingrese un email valido.',
       },
       {
         text: 'Contraseña',
@@ -76,6 +79,7 @@ export class LoginComponent implements OnInit, OnDestroy {
         id: '011',
         focus: false,
         value: '',
+        errorMessage: 'Ingrese una contraseña de 8 caracteres.',
       },
     ];
   }

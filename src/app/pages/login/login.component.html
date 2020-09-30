@@ -61,9 +61,15 @@
                 (blur)="onBlur(input.id)"
               />
             </div>
-            <!--             <span class="error" *ngIf="loginForm.invalid">
-              
-            </span> -->
+            <small
+              class="error"
+              *ngIf="
+                loginForm.get(input.type).invalid &&
+                loginForm.get(input.type).touched
+              "
+            >
+              {{ input.errorMessage }}
+            </small>
           </div>
           <div
             class="input__checkbox"
