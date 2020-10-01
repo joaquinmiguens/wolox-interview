@@ -28,13 +28,10 @@ export class GuestGuard implements CanActivate {
     | UrlTree {
     return this.authService.logged.pipe(
       map(($logged) => {
-        console.log($logged);
         if ($logged) {
-          console.log('tech');
           this.router.navigate(['/tech-list']);
           return false;
         } else {
-          console.log('login');
           return true;
         }
       })

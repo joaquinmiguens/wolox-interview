@@ -9,7 +9,6 @@ import {
 import { TechListService } from 'src/app/service/tech-list.service';
 import { Subscription } from 'rxjs';
 import { Candidate } from '../../models/candidate.model';
-import { TechListModule } from './tech-list.module';
 
 export interface Order {
   text: string;
@@ -25,7 +24,7 @@ export class TechListComponent implements OnInit, OnDestroy {
   public searchIcon: IconDefinition = faSearch;
   public downIcon: IconDefinition = faChevronDown;
   public upIcon: IconDefinition = faChevronUp;
-  public subscription: Subscription;
+  public listSubscription: Subscription;
   public candidates: Array<Candidate>;
   public searchText: string;
   public order: Order;
@@ -44,16 +43,14 @@ export class TechListComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.subscription = this.techList
+    this.listSubscription = this.techList
       .getCandidates()
       .subscribe(($candidates: Array<Candidate>) => {
         this.candidates = $candidates;
       });
   }
   ngOnDestroy(): void {
-    if (this.subscription) {
-      this.subscription.unsubscribe();
-    }
+    this.listSubscription ? this.listSubscription.unsubscribe() : null;
   }
   onKey(text: string) {
     this.searchText = text;

@@ -120,7 +120,6 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
   onKey(event, id: string) {
     const inputValue = event.target.value;
-    console.log(typeof inputValue, inputValue);
     this.inputs.map(($input: Input) => {
       if ($input.id === id) {
         $input.value = inputValue;
@@ -135,7 +134,6 @@ export class LoginComponent implements OnInit, OnDestroy {
           $input.focus = false;
         });
         if (this.loginForm.value.checkbox) {
-          console.log('guardar en local storage');
           const token: string = response.token;
           localStorage.setItem('userToken', JSON.stringify(token));
         }

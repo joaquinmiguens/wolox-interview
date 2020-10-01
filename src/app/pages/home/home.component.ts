@@ -37,17 +37,17 @@ export class HomeComponent {
       {
         image: `${this.assets}/Ic_Bullet_1.svg`,
         text:
-          'Estudiantes avanzados o recibidos de carrearas del rubro informatico, sistemas o electronicos.',
+          'Estudiantes avanzados o recibidos de carrearas del rubro informático, sistemas o electrónicos.',
         id: '007',
       },
       {
         image: `${this.assets}/Ic_Bullet_2.svg`,
-        text: 'Ingles intermedio ó avanzado.',
+        text: 'Inglés intermedio ó avanzado.',
         id: '008',
       },
       {
         image: `${this.assets}/Ic_Bullet_3.svg`,
-        text: 'Conocimiento en metodologas agiles (deseable).',
+        text: 'Conocimiento en metodologías ágiles (deseable).',
         id: '009',
       },
     ];
@@ -79,7 +79,7 @@ export class HomeComponent {
       },
       {
         image: `${this.assets}/Ic_brain.svg`,
-        title: 'Trabajar en ultimas tecnologias.',
+        title: 'Trabajar en últimas tecnologías.',
         id: '006',
       },
     ];

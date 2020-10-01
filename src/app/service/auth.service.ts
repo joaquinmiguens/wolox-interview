@@ -9,9 +9,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class AuthService {
   private isLogged: BehaviorSubject<boolean>;
   public logged: Observable<boolean>;
-  public postUrl: string =
+  public postUrl =
     'http://private-8e8921-woloxfrontendinverview.apiary-mock.com/login';
-  constructor(private http: HttpClient) {
+  constructor(private readonly http: HttpClient) {
     this.isLogged = new BehaviorSubject<boolean>(false);
     this.logged = this.isLogged.asObservable();
   }
@@ -19,9 +19,12 @@ export class AuthService {
     this.isLogged.next(state);
   }
   login(email: string, password: string): Observable<object> {
-    let body = {};
-    body['email'] = email;
-    body['password'] = password;
+    const body = {
+      email: '',
+      password: '',
+    };
+    body.email = email;
+    body.password = password;
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http
       .post<object>(this.postUrl, body, { headers })

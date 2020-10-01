@@ -52,7 +52,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
         active: true,
       },
       {
-        text: 'Tecnologias',
+        text: 'Tecnologías',
         routerLink: '/home',
         fragment: 'technologies',
         id: '002',
@@ -114,7 +114,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
   changeButtonText(state: boolean) {
     const buttonTab: HeaderTabs = {
-      text: state ? 'Listado' : 'Login',
+      text: state ? 'Proyectos' : 'Login',
       routerLink: state ? '/tech-list' : '/login',
       fragment: '',
       id: '005',
