@@ -49,7 +49,7 @@ Luego debemos ingresar al archivo **package.json** y modificar la variable **hom
 > Nota: Su url debe tener el siguiente formato : https://{{username}}.github.io/wolox-interview/
 
 
-Desde nuestra consola ejecutar el siguiente comando
+Desde la linea de comandos ejecutar
 
 ``` npm run deploy ```
 
