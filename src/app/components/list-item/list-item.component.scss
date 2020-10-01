@@ -26,6 +26,7 @@
       flex-basis: 10%;
       display: flex;
       justify-content: center;
+      margin-right: 2rem;
       img {
         height: 80px;
         width: 113px;
@@ -43,7 +44,6 @@
     }
     &__main {
       flex-basis: 70%;
-      margin-left: 3.75rem;
       display: flex;
       flex-direction: column;
       .highRow {
