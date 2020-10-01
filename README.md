@@ -8,36 +8,50 @@ Podes ver una demo del challenge [aca](https://joaquinmiguens.github.io/wolox-in
 
 Realizar un fork del repositorio.
 
+
 Clonar el proyecto en la VM.
 
 ```git clone https://github.com/{tu.usuario}/wolox-interview.git folder ```
+
 
 Luego nos posicionamos en el root del proyecto, donde se encuentra la mayoría de los scripts
 
 ```cd folder```
 
+
 Una vez en la carpeta raiz del proyecto instalamos las dependecias
 
 ```npm install```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Modo de desarrollo
 
-## Code scaffolding
+Para comenzar con el modo de produccion y hacer un deploy a github.pages debemos, antes que nada, verificar que los test sean logrados con exito para eso debemos ejecutar:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```ng test```
 
-## Build
+Luego para iniciar nuestro servidor local debemos ejecutar:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```ng serve```
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Una vez ejecutado abra el navegador e ingrese **localhost:4200/**.
 
-## Running end-to-end tests
+## Modo de produccion
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+Para comenzar con el modo de produccion y hacer un deploy a github.pages debemos, antes que nada, verificar que los test sean logrados con exito para eso debemos ejecutar:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```ng test```
+
+
+Luego debemos ingresar al archivo **package.json** y modificar la variable **homepage** asignandole la url de nuestra github.page.
+
+> Nota: Su url debe tener el siguiente formato : https://{{username}}.github.io/wolox-interview/
+
+
+Desde nuestra consola ejecutar el siguiente comando
+
+``` npm run deploy ```
+
+
+**Ahora si, tu app debe encontrarse alojada en https://{{username}}.github.io/wolox-interview/**
