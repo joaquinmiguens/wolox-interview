@@ -4,11 +4,10 @@
     src="../../../assets/Backgrounds/Bg_Footer@3x.png"
   />
   <div class="login__container">
-    <div class="login__container__vector" *ngIf="isImage" aria-hidden="true">
+    <div class="login__container__vector" *ngIf="isImage">
       <img
         src="../../../assets/dev.svg"
         alt="Desarrollador sentado en el suelo"
-        aria-hidden="true"
         data-aos="fade-right"
         data-aos-once="true"
         data-aos-duration="800"
@@ -21,7 +20,6 @@
           class="avatar"
           src="../../../assets/avatar.svg"
           alt="avatar"
-          aria-hidden="true"
           data-aos="fade-left"
           data-aos-once="true"
           data-aos-duration="800"
@@ -63,15 +61,9 @@
                 (focus)="onFocus(input.id)"
                 (keyup)="onKey($event, input.id)"
                 (blur)="onBlur(input.id)"
-                aria-required="true"
-                attr.aria-describedby="alert+__+{{ input.type }}"
               />
             </div>
             <small
-              role="alert"
-              aria-atomic="true"
-              aria-live="polite"
-              id="alert+__+{{ input.type }}"
               class="error"
               *ngIf="
                 loginForm.get(input.type).invalid &&
@@ -90,7 +82,7 @@
             data-aos-offset="100"
           >
             <label class="container" for="checkbox">
-              <span>Mantener mi sesion iniciada</span>
+              <span>Mantener mi sesión iniciada</span>
               <input
                 id="checkbox"
                 class="container__input"
@@ -103,7 +95,6 @@
           <button
             type="submit"
             class="input__button"
-            [attr.aria-hidden]="loginForm.invalid"
             [disabled]="loginForm.invalid"
             data-aos="fade-up"
             data-aos-once="true"
@@ -119,7 +110,6 @@
       class="login__container__logo"
       src="../../../assets/Ic_Wolox_Footer.svg"
       alt="Wolox Logo"
-      aria-hidden="true"
     />
   </div>
 </div>
