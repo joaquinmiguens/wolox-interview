@@ -34,21 +34,4 @@ describe('TechListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  describe('#search', () => {
-    it('should contain searching text', () => {
-      const hostElement = fixture.nativeElement;
-      const textInput: HTMLInputElement = hostElement.querySelector(
-        '.searchBar__field'
-      );
-      const list: HTMLElement = hostElement.querySelectorAll(
-        '.count__list__item'
-      );
-      console.log(list);
-      textInput.value = 'ba';
-
-      textInput.dispatchEvent(new Event('input'));
-      fixture.detectChanges();
-      /* expect(list.).toContain(textInput.value); */
-    });
-  });
 });
