@@ -83,14 +83,20 @@
             align-items: center;
             font-size: 2rem;
             margin-bottom: 20px;
+            @media screen and (max-width: 600px) {
+              font-size: 3rem;
+            }
             &__icon {
               font-size: 3rem;
-              margin-right: 20px;
+              margin-right: 1.2rem;
+              @media screen and (max-width: 600px) {
+                font-size: 3.5rem;
+              }
             }
           }
           .button {
             @include unfilled__button;
-            padding: 30px 80px;
+            padding: 1rem 5rem !important;
             &:hover {
               .button__arrow {
                 left: 80%;
@@ -102,6 +108,9 @@
             &__link {
               font-size: 1.25rem;
               color: white;
+              @media screen and (max-width: 600px) {
+                font-size: 1.75rem;
+              }
             }
             &__arrow {
               @include button__arrow;
