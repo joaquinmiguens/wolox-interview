@@ -25,8 +25,11 @@ Una vez en la carpeta raiz del proyecto instalamos las dependecias
 
 ## Modo de desarrollo
 
+Para comenzar con el modo de produccion y hacer un deploy a github.pages debemos, antes que nada, verificar que los test sean logrados con exito para eso debemos ejecutar:
 
-Para comenzar a probar la app debe desde la carpeta raiz ejecutar:
+```ng test```
+
+Luego para iniciar nuestro servidor local debemos ejecutar:
 
 ```ng serve```
 
