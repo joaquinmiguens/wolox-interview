@@ -1,0 +1,83 @@
+<div class="techList">
+  <div class="techList__container">
+    <div class="techList__container__heading">
+      <h2
+        class="title"
+        data-aos="fade-right"
+        data-aos-once="true"
+        data-aos-duration="1000"
+        data-aos-offset="100"
+      >
+        Nuestros
+        <span class="green">Proyectos</span>
+      </h2>
+      <h4
+        class="subtitle"
+        data-aos="fade-right"
+        data-aos-once="true"
+        data-aos-duration="1000"
+        data-aos-delay="500"
+        data-aos-offset="100"
+      >
+        Desarrollos en tecnologías Front-End, Back-End y Mobile
+      </h4>
+    </div>
+    <div class="techList__container__content">
+      <div class="box">
+        <div class="box__header">
+          <div class="searchBar">
+            <fa-icon class="searchBar__icon" [icon]="searchIcon"></fa-icon>
+            <input
+              #input
+              type="text"
+              class="searchBar__field"
+              placeholder="Buscar..."
+              (keyup)="onKey(input.value)"
+            />
+          </div>
+          <div class="nameFilter">
+            <span *ngIf="mobile">Ordenado:</span>
+            <span>
+              {{ order.text }}
+              <fa-icon
+                class="chevron"
+                [icon]="order.icon"
+                (click)="toggleOrder()"
+              ></fa-icon
+            ></span>
+          </div>
+        </div>
+        <div
+          class="list"
+          data-aos="fade-up"
+          data-aos-once="true"
+          data-aos-duration="400"
+          data-aos-delay="1000"
+          data-aos-offset="100"
+        >
+          <app-list-item
+            *ngFor="
+              let candidate of candidates | searchPipe: searchText:order.text
+            "
+            [candidate]="candidate"
+            data-aos="fade-up"
+            data-aos-once="true"
+            data-aos-duration="400"
+            data-aos-delay="200"
+            data-aos-offset="100"
+          ></app-list-item>
+        </div>
+        <div class="count">
+          <ul class="count__list">
+            <li
+              class="count__list__item"
+              *ngFor="let candidate of candidates | countPipe: searchText"
+            >
+              {{ candidate }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,112 @@
+<div class="login">
+  <img class="login__background" src="assets/Backgrounds/Bg_Footer@3x.png" />
+  <div class="login__container">
+    <div class="login__container__vector" *ngIf="isImage">
+      <img
+        src="assets/dev.svg"
+        alt="Desarrollador sentado en el suelo"
+        data-aos="fade-right"
+        data-aos-once="true"
+        data-aos-duration="800"
+        data-aos-offset="100"
+      />
+    </div>
+    <div class="login__container__form">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" tabindex="0w">
+        <img
+          class="avatar"
+          src="assets/avatar.svg"
+          alt="avatar"
+          data-aos="fade-left"
+          data-aos-once="true"
+          data-aos-duration="800"
+          data-aos-offset="100"
+        />
+        <h2
+          class="title"
+          data-aos="fade-left"
+          data-aos-once="true"
+          data-aos-duration="800"
+          data-aos-offset="100"
+        >
+          Login
+        </h2>
+        <div class="input">
+          <div
+            data-aos="fade-up"
+            data-aos-once="true"
+            data-aos-duration="800"
+            data-aos-delay="700"
+            data-aos-offset="100"
+            [ngClass]="{
+              input__content: true,
+              focus: input.focus ? true : false
+            }"
+            *ngFor="let input of inputs"
+            id="{{ input.id }}"
+          >
+            <div class="icon">
+              <fa-icon [icon]="input.icon"></fa-icon>
+            </div>
+            <div class="text">
+              <span>{{ input.text }}</span>
+              <input
+                type="{{ input.type }}"
+                class="text__field"
+                id="{{ input.type }}"
+                formControlName="{{ input.type }}"
+                (focus)="onFocus(input.id)"
+                (keyup)="onKey($event, input.id)"
+                (blur)="onBlur(input.id)"
+              />
+            </div>
+            <small
+              class="error"
+              *ngIf="
+                loginForm.get(input.type).invalid &&
+                loginForm.get(input.type).touched
+              "
+            >
+              {{ input.errorMessage }}
+            </small>
+          </div>
+          <div
+            class="input__checkbox"
+            data-aos="fade-up"
+            data-aos-once="true"
+            data-aos-duration="800"
+            data-aos-delay="900"
+            data-aos-offset="100"
+          >
+            <label class="container" for="checkbox">
+              <span>Mantener mi sesión iniciada</span>
+              <input
+                id="checkbox"
+                class="container__input"
+                type="checkbox"
+                formControlName="checkbox"
+              />
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <button
+            type="submit"
+            class="input__button"
+            [disabled]="loginForm.invalid"
+            data-aos="fade-up"
+            data-aos-once="true"
+            data-aos-duration="800"
+            data-aos-delay="1200"
+          >
+            <a class="input__button__link">Login</a>
+          </button>
+        </div>
+      </form>
+    </div>
+    <img
+      class="login__container__logo"
+      src="assets/Ic_Wolox_Footer.svg"
+      alt="Wolox Logo"
+    />
+  </div>
+</div>

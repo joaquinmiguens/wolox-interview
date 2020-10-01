@@ -1,0 +1,250 @@
+@import "../../../scss/mixins.scss";
+@import "../../../scss/variables.scss";
+
+.hero {
+  background: url("#{$asset__path}/Backgrounds/Bg_Header.png") no-repeat bottom
+    center/cover;
+
+  margin: 2rem 0;
+}
+
+.technologies {
+  @include section__separation;
+  &__container {
+    @include container;
+    @include two__column__grid(50%, 50%, 0rem);
+    @media screen and (max-width: 1200px) {
+      @include mobile__padding;
+    }
+    @media screen and (max-width: 960px) {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    &__content {
+      font-size: 1.5rem;
+      margin-right: 200px;
+      @media screen and (max-width: 1024px) {
+        margin-right: 50px;
+      }
+      @media screen and (max-width: 960px) {
+        margin-bottom: 50px;
+        margin-right: 0;
+      }
+      .title {
+        @include section__title;
+      }
+    }
+    &__image {
+      max-width: 100%;
+      object-fit: contain;
+      justify-self: center;
+    }
+  }
+}
+
+.woloxer {
+  @include section__separation;
+  margin: 0;
+  &__container {
+    @include two__column__grid(55%, 45%, 0rem);
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    @media screen and (max-width: 960px) {
+      grid-template-columns: 1fr;
+    }
+    &__image {
+      position: relative;
+      background: url("#{$asset__path}/img_woloxer.png") no-repeat center/cover;
+      width: 100%;
+      height: 500px;
+      .content {
+        color: #fff;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: auto;
+        padding: 6rem 2rem;
+        &__title {
+          font-size: 3.8rem;
+          font-weight: 700;
+          margin-bottom: 40px;
+        }
+        &__media {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          .twitter {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            @media screen and (max-width: 600px) {
+              font-size: 3rem;
+            }
+            &__icon {
+              font-size: 3rem;
+              margin-right: 1.2rem;
+              @media screen and (max-width: 600px) {
+                font-size: 3.5rem;
+              }
+            }
+          }
+          .button {
+            @include unfilled__button;
+            padding: 1rem 5rem !important;
+            &:hover {
+              .button__arrow {
+                left: 80%;
+              }
+            }
+            &::after {
+              @include button__after;
+            }
+            &__link {
+              font-size: 1.25rem;
+              color: white;
+              @media screen and (max-width: 600px) {
+                font-size: 1.75rem;
+              }
+            }
+            &__arrow {
+              @include button__arrow;
+            }
+          }
+        }
+      }
+    }
+    &__text {
+      background-color: #f2f5fa;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 3rem;
+      .title {
+        @include section__title;
+        font-size: 3rem;
+      }
+    }
+  }
+}
+
+.benefits {
+  @include section__separation;
+  min-height: 50vh;
+  &__container {
+    @include container;
+    @media screen and (max-width: 1024px) {
+      @include mobile__padding;
+    }
+    @media screen and (max-width: 960px) {
+      grid-template-columns: 1fr;
+    }
+    &__content {
+      text-align: center;
+      .title {
+        @include section__title;
+        letter-spacing: 0.02em;
+      }
+      .list {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 30px 0px;
+        box-shadow: 0 10px 15px -6px rgba(242, 245, 250, 1),
+          inset 0 -10px 15px -6px rgba(242, 245, 250, 1);
+        &__item {
+          width: 16.66%;
+          padding: 30px;
+          margin-bottom: 30px;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          @media screen and (max-width: 1200px) {
+            width: 33.33%;
+            margin: auto;
+          }
+          @media screen and (max-width: 600px) {
+            width: 50%;
+            margin: auto;
+          }
+          @media screen and (max-width: 468px) {
+            width: 100%;
+            margin: auto;
+          }
+          &__content {
+            display: flex;
+            flex: 1 1 auto;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            .vector {
+              display: flex;
+              justify-content: flex-start;
+              margin-top: 16px;
+              margin-bottom: 20px;
+              width: 97px;
+              height: 97px;
+            }
+            .text {
+              flex: 1 1 auto;
+              font-size: 1rem;
+              @media screen and (max-width: 960px) {
+                font-size: 1.5rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.requiriments {
+  @include section__separation;
+  min-height: 50vh;
+  &__container {
+    @include container;
+    @include two__column__grid(45%, 55%, 0rem);
+    @media screen and (max-width: 1024px) {
+      @include mobile__padding;
+    }
+    @media screen and (max-width: 960px) {
+      grid-template-columns: 1fr;
+    }
+    .content {
+      padding: 0 70px;
+
+      @media screen and (max-width: 960px) {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+      &__title {
+        @include section__title;
+        font-weight: 600;
+      }
+    }
+    .list {
+      display: flex;
+      align-items: center;
+      &__items {
+        font-size: 1.2rem;
+        &__item {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          padding: 20px;
+          .image {
+            margin-right: 20px;
+          }
+        }
+      }
+    }
+  }
+}

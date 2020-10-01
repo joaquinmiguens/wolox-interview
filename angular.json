@@ -28,7 +28,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/scss/styles.scss",
+              "node_modules/aos/dist/aos.css"
             ],
             "scripts": []
           },
@@ -92,7 +93,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/scss/styles.scss"
             ],
             "scripts": []
           }
@@ -121,8 +122,13 @@
               "devServerTarget": "wolox-interview:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "wolox-interview"
 }

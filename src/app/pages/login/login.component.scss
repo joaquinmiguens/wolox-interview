@@ -1,0 +1,325 @@
+@import "../../../scss/mixins.scss";
+@import "../../../scss/variables.scss";
+
+@mixin input__pseudo__class {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  width: 50%;
+  height: 2px;
+  background-color: #757575;
+  transition: 0.3s;
+}
+
+.login {
+  height: 100vh;
+  overflow: hidden;
+  &__background {
+    position: absolute;
+    width: 100%;
+    object-fit: contain;
+    z-index: -1;
+    bottom: 0;
+  }
+}
+.login__container {
+  @include container;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 7rem;
+  position: relative;
+
+  @media screen and (max-width: 1200px) {
+    column-gap: 5rem;
+    @include mobile__padding;
+  }
+  @media screen and (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+  &__logo {
+    position: absolute;
+    justify-self: center;
+    bottom: 20px;
+    max-width: 100px;
+    width: 10rem;
+    object-fit: contain;
+  }
+  &__vector {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    img {
+      width: 500px;
+      object-fit: contain;
+      @media screen and (max-width: 1000px) {
+        width: 400px;
+      }
+    }
+  }
+  &__form {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    @media screen and (max-width: 900px) {
+      justify-content: center;
+    }
+    form {
+      width: 360px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      @media screen and (max-width: 1000px) {
+        width: 290px;
+      }
+      @media screen and (max-width: 900px) {
+        width: 100%;
+      }
+      .avatar {
+        width: 100px;
+        object-fit: contain;
+        @media screen and (max-width: 400px) {
+          width: 80px;
+        }
+      }
+      .title {
+        @include page__title;
+        margin: 15px 0;
+        @media screen and (max-width: 1000px) {
+          margin: 8px 0;
+        }
+      }
+      .input {
+        & > div {
+          @media screen and (max-width: 400px) {
+            margin-top: 10px !important;
+          }
+        }
+        &__content {
+          position: relative;
+          display: grid;
+          grid-template-columns: 10% 90%;
+          margin: 25px 0;
+          padding: 5px 0;
+          border-bottom: 2px solid #757575;
+          margin-bottom: 40px;
+          font-size: 1.2rem;
+          @media screen and (max-width: 400px) {
+            margin: 30px 0;
+          }
+          .error {
+            position: absolute;
+            transform: translateY(60px);
+            font-size: 0.9rem;
+            color: lightcoral;
+            text-align: left;
+          }
+          &::before {
+            @include input__pseudo__class();
+            left: 50%;
+          }
+          &::after {
+            @include input__pseudo__class();
+            right: 50%;
+          }
+
+          &.focus {
+            .icon {
+              color: $lightblue !important;
+            }
+            &::after,
+            &::before {
+              width: 50%;
+              background-color: $lightblue;
+            }
+            .text {
+              span {
+                top: -5px;
+                font-size: 0.9rem;
+              }
+            }
+          }
+          .icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            height: 45px;
+            color: #757575;
+            transition: 0.3s;
+          }
+          .text {
+            position: relative;
+            height: 45px;
+            span {
+              display: block;
+              position: absolute;
+              left: 10px;
+              top: 50%;
+              transform: translateY(-50%);
+              color: #757575;
+              font-size: 1.2rem;
+              transition: 0.3s;
+            }
+            &__field {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              top: 0;
+              left: 0;
+              border: none;
+              outline: none;
+              background: none;
+              padding: 0.5rem 0.7rem;
+              font-size: 1.2rem;
+              color: #121212;
+            }
+          }
+        }
+        &__checkbox {
+          display: flex;
+          align-items: center;
+          vertical-align: center;
+          .container {
+            display: flex;
+            height: 24px;
+            position: relative;
+            padding-left: 3rem;
+            margin: 30px 0;
+            cursor: pointer;
+            font-size: 1rem;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            clear: both;
+            @media screen and (max-width: 400px) {
+              margin: 25px 0;
+              height: 18px;
+            }
+            @media screen and (max-width: 360px) {
+              margin: 15px 0;
+            }
+            span {
+              align-self: center;
+            }
+            &:hover {
+              &__checkmark {
+                background-color: rgb(170, 154, 154);
+              }
+            }
+            &__input {
+              position: absolute;
+              opacity: 0;
+              cursor: pointer;
+              height: 0;
+              width: 0;
+              &:checked {
+                ~ .checkmark {
+                  background-color: $lightblue;
+                  border-radius: 5px;
+                  -webkit-transform: rotate(0deg) scale(1);
+                  -ms-transform: rotate(0deg) scale(1);
+                  transform: rotate(0deg) scale(1);
+                  opacity: 1;
+                  border: 2px solid $lightblue;
+                  &::after {
+                    -webkit-transform: rotate(45deg) scale(1);
+                    -ms-transform: rotate(45deg) scale(1);
+                    transform: rotate(45deg) scale(1);
+                    opacity: 1;
+                    left: 7px;
+                    top: 2px;
+                    width: 6px;
+                    height: 12px;
+                    border: solid white;
+                    border-width: 0 2px 2px 0;
+                    background-color: transparent;
+                    border-radius: 0;
+                    @media screen and (max-width: 400px) {
+                      left: 5px;
+                      top: 1px;
+                      width: 4px;
+                      height: 8px;
+                    }
+                  }
+                }
+              }
+            }
+            .checkmark {
+              position: absolute;
+              top: 0;
+              left: 0;
+              height: 24px;
+              width: 24px;
+              background-color: transparent;
+              border-radius: 5px;
+              transition: all 0.3s ease-out;
+              -webkit-transition: all 0.3s ease-out;
+              -moz-transition: all 0.3s ease-out;
+              -ms-transition: all 0.3s ease-out;
+              -o-transition: all 0.3s ease-out;
+              border: 2px solid #757575;
+              @media screen and (max-width: 400px) {
+                height: 18px;
+                width: 18px;
+              }
+              &::after {
+                position: absolute;
+                content: "";
+                left: 12px;
+                top: 12px;
+                height: 0px;
+                width: 0px;
+                border-radius: 5px;
+                border: solid $lightblue;
+                border-width: 0 3px 3px 0;
+                -webkit-transform: rotate(0deg) scale(0);
+                -ms-transform: rotate(0deg) scale(0);
+                transform: rotate(0deg) scale(0);
+                opacity: 1;
+                transition: all 0.3s ease-out;
+                -webkit-transition: all 0.3s ease-out;
+                -moz-transition: all 0.3s ease-out;
+                -ms-transition: all 0.3s ease-out;
+                -o-transition: all 0.3s ease-out;
+                @media screen and (max-width: 400px) {
+                  left: 5px;
+                  top: 1px;
+                  width: 4px;
+                  height: 8px;
+                }
+              }
+            }
+          }
+        }
+        &__button {
+          width: fit-content;
+          background-color: $lightblue;
+          border: solid 1px;
+          border-color: $lightblue;
+          border-radius: 50px;
+          padding: 1rem 4rem !important;
+          letter-spacing: 0.02em;
+          z-index: 0;
+          cursor: pointer;
+          margin-top: 2rem;
+          box-shadow: 0 20px 10px -6px rgba(242, 245, 250, 1),
+            20px 0px 10px -6px rgba(242, 245, 250, 1),
+            -20px 0px 10px -6px rgba(242, 245, 250, 1);
+          transition: 0.3s;
+          &:disabled {
+            background-color: #757575;
+            border-color: #757575;
+            transition: 0.3s;
+          }
+          &__link {
+            font-size: 1.2rem;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}

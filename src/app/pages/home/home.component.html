@@ -1,0 +1,207 @@
+<div class="home">
+  <section class="hero" id="hero" aria-label="Sección principal">
+    <app-showcase></app-showcase>
+  </section>
+  <section
+    class="technologies"
+    id="technologies"
+    aria-label="Sección de tecnologias"
+  >
+    <div class="technologies__container" tabindex="0">
+      <div class="technologies__container__content">
+        <h4
+          class="title"
+          data-aos="fade-right"
+          data-aos-once="true"
+          data-aos-duration="1000"
+          data-aos-offset="100"
+        >
+          Estamos buscando para incorporar gente increible para estas
+          tecnologías:
+        </h4>
+      </div>
+      <img
+        data-aos="fade-left"
+        data-aos-once="true"
+        data-aos-duration="1000"
+        data-aos-offset="100"
+        src="assets/Ic_Tecnologys.svg"
+        alt="Angular, React, Node, Vue.js, Java, Rails, IOS, React Native, Net Core, Android"
+        class="technologies__container__image"
+      />
+    </div>
+  </section>
+  <section class="woloxer" id="woloxer" aria-label="Sección de Woloxers">
+    <div class="woloxer__container" tabindex="0">
+      <div
+        class="woloxer__container__image"
+        data-aos="fade-right"
+        data-aos-once="true"
+        data-aos-duration="1000"
+        data-aos-offset="100"
+      >
+        <div class="content">
+          <div class="content__title">
+            <h4
+              class="green"
+              data-aos="fade-up"
+              data-aos-once="true"
+              data-aos-duration="600"
+              data-aos-delay="900"
+              aria-label="Wolox es una familia de más de trescientos cincuenta personas."
+            >
+              350 +
+              <span
+                class="lightblue brigth"
+                data-aos="fade-up"
+                data-aos-once="true"
+                data-aos-duration="600"
+                data-aos-delay="1200"
+              >
+                Woloxers
+              </span>
+            </h4>
+          </div>
+          <div class="content__media">
+            <div class="twitter">
+              <fa-icon
+                class="twitter__icon"
+                [icon]="twitterIcon"
+                data-aos="fade-up"
+                data-aos-once="true"
+                data-aos-duration="400"
+                data-aos-delay="1600"
+                aria-hidden="true"
+              ></fa-icon>
+              <h5
+                aria-label="Seguinos en Twitter en @Wolox."
+                data-aos="fade-up"
+                data-aos-once="true"
+                data-aos-duration="400"
+                data-aos-delay="1600"
+              >
+                @Wolox
+              </h5>
+            </div>
+            <button
+              class="button"
+              data-aos="fade-bottom"
+              data-aos-once="true"
+              data-aos-duration="400"
+              data-aos-delay="1600"
+              (click)="navigateToTwitter()"
+            >
+              <a
+                tabindex="-1"
+                class="button__link"
+                data-aos="fade-bottom"
+                data-aos-once="true"
+                data-aos-duration="400"
+                data-aos-delay="1600"
+                >Siguenos</a
+              >
+              <div class="button__arrow">
+                <fa-icon class="icon" [icon]="arrowIcon"></fa-icon>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="woloxer__container__text"
+        data-aos="fade-left"
+        data-aos-once="true"
+        data-aos-duration="1000"
+        data-aos-offset="100"
+      >
+        <h4 class="title">
+          Trabajamos para
+          <strong class="lightblue">convertir</strong>
+          <strong class="green"> ideas</strong>
+          en productos.
+        </h4>
+      </div>
+    </div>
+  </section>
+  <!-- Benefits -->
+  <section class="benefits" id="benefits" aria-label="Sección de beneficios">
+    <div class="benefits__container" tabindex="0">
+      <div class="benefits__container__content">
+        <h4
+          class="title"
+          data-aos="fade-up"
+          data-aos-once="true"
+          data-aos-duration="600"
+          data-aos-offset="100"
+        >
+          Entre los beneficios que ofrecemos se encuentran
+          <span class="lightblue" aria-hidden="true">;)</span>
+        </h4>
+        <div class="list">
+          <div
+            role="tooltip"
+            data-aos="fade-up"
+            data-aos-once="true"
+            data-aos-duration="400"
+            data-aos-delay="600"
+            data-aos-offset="100"
+            class="list__item"
+            *ngFor="let benefit of benefits; trackBy: trackById"
+            id="{{ benefit.id }}"
+          >
+            <div class="list__item__content">
+              <div class="vector">
+                <img src="{{ benefit.image }}" alt="" />
+              </div>
+              <span class="text">
+                {{ benefit.title }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Requeriments -->
+  <section
+    class="requiriments"
+    id="requiriments"
+    aria-label="Sección de Requerimientos"
+  >
+    <!-- Title -->
+    <div class="requiriments__container" tabindex="0">
+      <div class="content">
+        <h4
+          class="content__title"
+          data-aos="fade-right"
+          data-aos-once="true"
+          data-aos-duration="1000"
+          data-aos-offset="100"
+          aria-label="Nuestros requerimientos son"
+        >
+          Requerimientos
+        </h4>
+      </div>
+      <!-- List -->
+      <div class="list">
+        <ul
+          class="list__items"
+          data-aos="fade-left"
+          data-aos-once="true"
+          data-aos-duration="1000"
+          data-aos-offset="100"
+        >
+          <li
+            class="list__items__item"
+            *ngFor="let requiriment of requiriments"
+            id="{{ requiriment.id }}"
+          >
+            <span class="image"
+              ><img src="{{ requiriment.image }}" alt="" /></span
+            ><span>{{ requiriment.text }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,95 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins.scss";
+.item {
+  background-color: white;
+  border-radius: 50px;
+  box-shadow: 0 10px 10px -6px rgba(0, 0, 0, 0.1),
+    10px 0px 10px -6px rgba(0, 0, 0, 0.1),
+    -10px 0px 10px -6px rgba(0, 0, 0, 0.1);
+  width: 85%;
+  margin: auto;
+  margin-top: 20px;
+  padding: 10px;
+  &:hover {
+    transform: scale(1.05);
+  }
+  @media screen and (max-width: 900px) {
+    width: 100%;
+  }
+  &__content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 1.2rem;
+    &__image {
+      flex-basis: 10%;
+      display: flex;
+      justify-content: center;
+      margin-right: 2rem;
+      img {
+        height: 80px;
+        width: 113px;
+        object-fit: contain;
+        background: transparent;
+        @media screen and (max-width: 500px) {
+          height: 50px;
+          width: 71px;
+        }
+        @media screen and (max-width: 360px) {
+          height: 40px;
+          width: 56px;
+        }
+      }
+    }
+    &__main {
+      flex-basis: 70%;
+      display: flex;
+      flex-direction: column;
+      .highRow {
+        font-size: 1.2rem;
+        letter-spacing: 0.02em;
+        &__text {
+          color: $green;
+        }
+        &__chip {
+          background-color: $lightblue;
+          color: white;
+          padding: 5px 7.5px;
+          border-radius: 50px;
+          text-transform: uppercase;
+          margin-left: 5px;
+        }
+      }
+      .name {
+        margin: 0.5rem 0;
+        font-size: 2rem;
+        font-weight: 500;
+      }
+      .lowRow {
+        &__item {
+          font-size: 1.2rem;
+          letter-spacing: 0.02em;
+          color: #757575;
+        }
+      }
+    }
+    &__link {
+      flex-basis: 20%;
+      color: #121212;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      @media screen and (max-width: 500px) {
+        display: none;
+      }
+      .icon {
+        margin-left: 20px;
+        &__bookMark {
+          color: #121212;
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}

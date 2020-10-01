@@ -1,0 +1,30 @@
+<div class="item">
+  <div class="item__content">
+    <div class="item__content__image">
+      <img src="{{ candidate.logo }}" alt="Logo de {{ candidate.tech }} " />
+    </div>
+    <div class="item__content__main">
+      <div class="highRow">
+        <span class="highRow__text" id="{{ candidate.author }}"
+          >{{ candidate.tech }}
+        </span>
+        <label class="highRow__chip" for="{{ candidate.author }}">Tech</label>
+      </div>
+      <h5 class="name">{{ candidate.author }}</h5>
+      <div class="lowRow">
+        <p class="lowRow__item">
+          {{ candidate.type }} • {{ candidate.language }} •
+          {{ candidate.year }} • {{ candidate.license }}
+        </p>
+      </div>
+    </div>
+    <div class="item__content__link">
+      <a class="icon">
+        <fa-icon class="icon__bookMark" [icon]="bookMarkIcon"></fa-icon>
+      </a>
+      <a class="icon">
+        <fa-icon class="icon__bookMark" [icon]="linkIcon"></fa-icon>
+      </a>
+    </div>
+  </div>
+</div>

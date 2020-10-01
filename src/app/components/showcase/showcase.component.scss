@@ -1,0 +1,43 @@
+@import "../../../scss/mixins.scss";
+@import "../../../scss/variables.scss";
+
+.showcase {
+  @include section__separation;
+  &__container {
+    @include container;
+    @include two__column__grid(50%, 50%, 0rem);
+    @media screen and (max-width: 1200px) {
+      @include mobile__padding;
+    }
+    @media screen and (max-width: 1024px) {
+      grid-template-columns: 1fr;
+    }
+    &__content {
+      /* font-size: 2rem; */
+      margin-bottom: 20vh;
+      @media screen and (max-width: 1024px) {
+        margin-bottom: 40px;
+        order: 2;
+        max-width: 500px;
+      }
+      .title {
+        @include page__title;
+        &__bold {
+          font-weight: 700;
+        }
+      }
+    }
+    &__image {
+      max-width: 75%;
+      object-fit: contain;
+      justify-self: flex-end;
+      @media screen and (max-width: 1024px) {
+        justify-self: center;
+        order: -1;
+      }
+    }
+  }
+}
+.rotate {
+  @include rotate__vector;
+}
