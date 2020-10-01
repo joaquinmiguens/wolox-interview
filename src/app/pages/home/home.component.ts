@@ -32,7 +32,7 @@ export class HomeComponent {
     },
   ];
   constructor() {
-    this.assets = '../../../assets';
+    this.assets = 'assets';
     this.requiriments = [
       {
         image: `${this.assets}/Ic_Bullet_1.svg`,

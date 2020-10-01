@@ -3,8 +3,8 @@
 
 .footer {
   position: relative;
-  background: url("../../../../../assets/Backgrounds/Bg_Footer.png") no-repeat
-    bottom center/cover;
+  background: url("assets/Backgrounds/Bg_Footer.png") no-repeat bottom
+    center/cover;
   &__container {
     @include container;
     @media screen and (max-width: 1024px) {
