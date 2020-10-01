@@ -4,7 +4,21 @@
 
 Podes ver una demo del challenge [aca](https://joaquinmiguens.github.io/wolox-interview/) :rocket: :raised_hands:
 
-## Development server
+## Instalación 🔧
+
+Realizar un fork del repositorio.
+
+Clonar el proyecto en la VM.
+
+```git clone https://github.com/{tu.usuario}/wolox-interview.git folder ```
+
+Luego nos posicionamos en el root del proyecto, donde se encuentra la mayoría de los scripts
+
+```cd folder```
+
+Una vez en la carpeta raiz del proyecto instalamos las dependecias
+
+```npm install```
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
