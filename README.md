@@ -2,7 +2,7 @@
 
 ## DEMO
 
-[Link](https://joaquinmiguens.github.io/wolox-interview/)
+Podes ver una demo del challenge [aca](https://joaquinmiguens.github.io/wolox-interview/) :rocket: :raised_hands:
 
 ## Development server
 
