@@ -44,7 +44,7 @@ Para comenzar con el modo de produccion y hacer un deploy a github.pages debemos
 ```ng test```
 
 
-Luego debemos ingresar al archivo **package.json** y modificar la variable **homepage** asignandole la url de nuestra github.page.
+Luego debemos ingresar al archivo **package.json** y modificar la variable **homepage** asignandole la url de tu github.page.
 
 > Nota: Su url debe tener el siguiente formato : https://{{username}}.github.io/wolox-interview/
 
