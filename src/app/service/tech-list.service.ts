@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class TechListService {
   public getUrl: string =
-    'http://private-8e8921-woloxfrontendinverview.apiary-mock.com/techs';
+    'https://private-8e8921-woloxfrontendinverview.apiary-mock.com/techs';
   constructor(private http: HttpClient) {}
 
   getCandidates(): Observable<object> {

@@ -10,7 +10,7 @@ export class AuthService {
   private isLogged: BehaviorSubject<boolean>;
   public logged: Observable<boolean>;
   public postUrl =
-    'http://private-8e8921-woloxfrontendinverview.apiary-mock.com/login';
+    'https://private-8e8921-woloxfrontendinverview.apiary-mock.com/login';
   constructor(private readonly http: HttpClient) {
     this.isLogged = new BehaviorSubject<boolean>(false);
     this.logged = this.isLogged.asObservable();
